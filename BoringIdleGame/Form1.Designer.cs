@@ -32,35 +32,79 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnButton = new System.Windows.Forms.Button();
             this.lblNumber = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblItem3Prc = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblItem3Lvl = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnItem3 = new System.Windows.Forms.Button();
-            this.lblItem2Prc = new System.Windows.Forms.Label();
-            this.lblItem2Lvl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnItem2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblItem1Prc = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblItem1Lvl = new System.Windows.Forms.Label();
-            this.btnItem1 = new System.Windows.Forms.Button();
             this.timerNumberUpdater = new System.Windows.Forms.Timer(this.components);
             this.timerLabelUpdater = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.progressBarButton = new System.Windows.Forms.ProgressBar();
+            this.btnItem1 = new System.Windows.Forms.Button();
+            this.btnUpgrade2 = new System.Windows.Forms.Button();
+            this.btnUpgrade1 = new System.Windows.Forms.Button();
+            this.btnItem2 = new System.Windows.Forms.Button();
             this.timerProgressBar = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.lblAutoClick = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblUpgrade2Prc = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblUpgrade2Lvl = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblUpgrade1Prc = new System.Windows.Forms.Label();
+            this.lblUpgrade1Lvl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblItem2Lvl = new System.Windows.Forms.Label();
+            this.lblItem2Prc = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblItem1Lvl = new System.Windows.Forms.Label();
+            this.lblItem1Prc = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnItem4 = new System.Windows.Forms.Button();
+            this.lblItem4Lvl = new System.Windows.Forms.Label();
+            this.lblItem4Prc = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnItem3 = new System.Windows.Forms.Button();
+            this.lblItem3Lvl = new System.Windows.Forms.Label();
+            this.lblItem3Prc = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnItem6 = new System.Windows.Forms.Button();
+            this.lblItem6Lvl = new System.Windows.Forms.Label();
+            this.lblItem6Prc = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btnItem5 = new System.Windows.Forms.Button();
+            this.lblItem5Lvl = new System.Windows.Forms.Label();
+            this.lblItem5Prc = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btnItem8 = new System.Windows.Forms.Button();
+            this.lblItem8Lvl = new System.Windows.Forms.Label();
+            this.lblItem8Prc = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnItem7 = new System.Windows.Forms.Button();
+            this.lblItem7Lvl = new System.Windows.Forms.Label();
+            this.lblItem7Prc = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblUpgrade3Prc = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblUpgrade3Lvl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnUpgrade3 = new System.Windows.Forms.Button();
+            this.lblUpgrade4Prc = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblUpgrade4Lvl = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btnUpgrade4 = new System.Windows.Forms.Button();
+            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -87,6 +131,7 @@
             this.toolTip1.SetToolTip(this.btnButton, "Click");
             this.btnButton.UseVisualStyleBackColor = true;
             this.btnButton.Click += new System.EventHandler(this.btnButton_Click);
+            this.btnButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnButton_MouseDown);
             // 
             // lblNumber
             // 
@@ -99,198 +144,6 @@
             this.lblNumber.TabIndex = 2;
             this.lblNumber.Text = "0";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblItem3Prc);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.lblItem3Lvl);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnItem3);
-            this.groupBox1.Controls.Add(this.lblItem2Prc);
-            this.groupBox1.Controls.Add(this.lblItem2Lvl);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.btnItem2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblItem1Prc);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lblItem1Lvl);
-            this.groupBox1.Controls.Add(this.btnItem1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(650, 471);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Purchase Items";
-            // 
-            // lblItem3Prc
-            // 
-            this.lblItem3Prc.AutoSize = true;
-            this.lblItem3Prc.Location = new System.Drawing.Point(380, 137);
-            this.lblItem3Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem3Prc.Name = "lblItem3Prc";
-            this.lblItem3Prc.Size = new System.Drawing.Size(49, 29);
-            this.lblItem3Prc.TabIndex = 14;
-            this.lblItem3Prc.Text = "500";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(303, 137);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 29);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Price:";
-            // 
-            // lblItem3Lvl
-            // 
-            this.lblItem3Lvl.AutoSize = true;
-            this.lblItem3Lvl.Location = new System.Drawing.Point(251, 137);
-            this.lblItem3Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem3Lvl.Name = "lblItem3Lvl";
-            this.lblItem3Lvl.Size = new System.Drawing.Size(25, 29);
-            this.lblItem3Lvl.TabIndex = 12;
-            this.lblItem3Lvl.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 137);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 29);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Level:";
-            // 
-            // btnItem3
-            // 
-            this.btnItem3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnItem3.Enabled = false;
-            this.btnItem3.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItem3.Location = new System.Drawing.Point(7, 127);
-            this.btnItem3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnItem3.Name = "btnItem3";
-            this.btnItem3.Size = new System.Drawing.Size(156, 42);
-            this.btnItem3.TabIndex = 10;
-            this.btnItem3.Text = "Item 3";
-            this.toolTip1.SetToolTip(this.btnItem3, "Increases Auto Click Speed");
-            this.btnItem3.UseVisualStyleBackColor = true;
-            this.btnItem3.Click += new System.EventHandler(this.btnItem3_Click);
-            // 
-            // lblItem2Prc
-            // 
-            this.lblItem2Prc.AutoSize = true;
-            this.lblItem2Prc.Location = new System.Drawing.Point(380, 88);
-            this.lblItem2Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem2Prc.Name = "lblItem2Prc";
-            this.lblItem2Prc.Size = new System.Drawing.Size(44, 29);
-            this.lblItem2Prc.TabIndex = 9;
-            this.lblItem2Prc.Text = "100";
-            // 
-            // lblItem2Lvl
-            // 
-            this.lblItem2Lvl.AutoSize = true;
-            this.lblItem2Lvl.Location = new System.Drawing.Point(251, 88);
-            this.lblItem2Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem2Lvl.Name = "lblItem2Lvl";
-            this.lblItem2Lvl.Size = new System.Drawing.Size(25, 29);
-            this.lblItem2Lvl.TabIndex = 8;
-            this.lblItem2Lvl.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(303, 88);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Price:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 88);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Level:";
-            // 
-            // btnItem2
-            // 
-            this.btnItem2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnItem2.Enabled = false;
-            this.btnItem2.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItem2.Location = new System.Drawing.Point(7, 79);
-            this.btnItem2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnItem2.Name = "btnItem2";
-            this.btnItem2.Size = new System.Drawing.Size(156, 42);
-            this.btnItem2.TabIndex = 5;
-            this.btnItem2.Text = "Item 2";
-            this.toolTip1.SetToolTip(this.btnItem2, "+1 Button Click");
-            this.btnItem2.UseVisualStyleBackColor = true;
-            this.btnItem2.Click += new System.EventHandler(this.btnItem2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(171, 39);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Level:";
-            // 
-            // lblItem1Prc
-            // 
-            this.lblItem1Prc.AutoSize = true;
-            this.lblItem1Prc.Location = new System.Drawing.Point(380, 39);
-            this.lblItem1Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem1Prc.Name = "lblItem1Prc";
-            this.lblItem1Prc.Size = new System.Drawing.Size(32, 29);
-            this.lblItem1Prc.TabIndex = 3;
-            this.lblItem1Prc.Text = "10";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(303, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Price:";
-            // 
-            // lblItem1Lvl
-            // 
-            this.lblItem1Lvl.AutoSize = true;
-            this.lblItem1Lvl.Location = new System.Drawing.Point(251, 39);
-            this.lblItem1Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItem1Lvl.Name = "lblItem1Lvl";
-            this.lblItem1Lvl.Size = new System.Drawing.Size(25, 29);
-            this.lblItem1Lvl.TabIndex = 1;
-            this.lblItem1Lvl.Text = "0";
-            // 
-            // btnItem1
-            // 
-            this.btnItem1.BackColor = System.Drawing.Color.Transparent;
-            this.btnItem1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnItem1.Enabled = false;
-            this.btnItem1.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItem1.Location = new System.Drawing.Point(7, 31);
-            this.btnItem1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnItem1.Name = "btnItem1";
-            this.btnItem1.Size = new System.Drawing.Size(156, 42);
-            this.btnItem1.TabIndex = 0;
-            this.btnItem1.Text = "Item 1";
-            this.toolTip1.SetToolTip(this.btnItem1, "+1 Auto Click");
-            this.btnItem1.UseVisualStyleBackColor = false;
-            this.btnItem1.Click += new System.EventHandler(this.btnItem1_Click);
-            // 
             // timerNumberUpdater
             // 
             this.timerNumberUpdater.Interval = 1000;
@@ -301,41 +154,6 @@
             this.timerLabelUpdater.Interval = 20;
             this.timerLabelUpdater.Tick += new System.EventHandler(this.timerLabelUpdater_Tick);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tabControl1.Location = new System.Drawing.Point(281, 70);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(674, 525);
-            this.tabControl1.TabIndex = 4;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Size = new System.Drawing.Size(666, 483);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Buy stuff";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 499);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buy More Stuff";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // progressBarButton
             // 
             this.progressBarButton.Location = new System.Drawing.Point(13, 601);
@@ -345,7 +163,69 @@
             this.progressBarButton.Size = new System.Drawing.Size(942, 27);
             this.progressBarButton.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarButton.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.progressBarButton, "Fill the bar for a bonus!");
+            this.toolTip1.SetToolTip(this.progressBarButton, "Fill the bar by clicking the button quickly to earn a bonus!");
+            // 
+            // btnItem1
+            // 
+            this.btnItem1.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem1.Enabled = false;
+            this.btnItem1.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem1.Location = new System.Drawing.Point(8, 6);
+            this.btnItem1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem1.Name = "btnItem1";
+            this.btnItem1.Size = new System.Drawing.Size(156, 53);
+            this.btnItem1.TabIndex = 0;
+            this.btnItem1.Text = "Item 1";
+            this.toolTip1.SetToolTip(this.btnItem1, "+1 Auto Click");
+            this.btnItem1.UseVisualStyleBackColor = false;
+            this.btnItem1.Click += new System.EventHandler(this.btnItem1_Click);
+            // 
+            // btnUpgrade2
+            // 
+            this.btnUpgrade2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpgrade2.Enabled = false;
+            this.btnUpgrade2.Font = new System.Drawing.Font("Coolvetica Rg", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpgrade2.Location = new System.Drawing.Point(8, 65);
+            this.btnUpgrade2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpgrade2.Name = "btnUpgrade2";
+            this.btnUpgrade2.Size = new System.Drawing.Size(156, 53);
+            this.btnUpgrade2.TabIndex = 40;
+            this.btnUpgrade2.Text = "Upgrade 2";
+            this.toolTip1.SetToolTip(this.btnUpgrade2, "Increases Auto Click Speed");
+            this.btnUpgrade2.UseVisualStyleBackColor = true;
+            this.btnUpgrade2.Click += new System.EventHandler(this.btnUpgrade2_Click);
+            // 
+            // btnUpgrade1
+            // 
+            this.btnUpgrade1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpgrade1.Enabled = false;
+            this.btnUpgrade1.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpgrade1.Location = new System.Drawing.Point(8, 6);
+            this.btnUpgrade1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpgrade1.Name = "btnUpgrade1";
+            this.btnUpgrade1.Size = new System.Drawing.Size(156, 53);
+            this.btnUpgrade1.TabIndex = 35;
+            this.btnUpgrade1.Text = "Upgrade 1";
+            this.toolTip1.SetToolTip(this.btnUpgrade1, "+1 per Button Click");
+            this.btnUpgrade1.UseVisualStyleBackColor = true;
+            this.btnUpgrade1.Click += new System.EventHandler(this.btnUpgrade1_Click);
+            // 
+            // btnItem2
+            // 
+            this.btnItem2.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem2.Enabled = false;
+            this.btnItem2.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem2.Location = new System.Drawing.Point(8, 65);
+            this.btnItem2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem2.Name = "btnItem2";
+            this.btnItem2.Size = new System.Drawing.Size(156, 53);
+            this.btnItem2.TabIndex = 5;
+            this.btnItem2.Text = "Item 2";
+            this.toolTip1.SetToolTip(this.btnItem2, "+5 Auto Clicks");
+            this.btnItem2.UseVisualStyleBackColor = false;
+            this.btnItem2.Click += new System.EventHandler(this.btnItem2_Click);
             // 
             // timerProgressBar
             // 
@@ -370,6 +250,706 @@
             this.lblAutoClick.TabIndex = 8;
             this.lblAutoClick.Text = "Auto Clicks: 0";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lblUpgrade4Prc);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.lblUpgrade4Lvl);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.btnUpgrade4);
+            this.tabPage2.Controls.Add(this.lblUpgrade3Prc);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.lblUpgrade3Lvl);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.btnUpgrade3);
+            this.tabPage2.Controls.Add(this.lblUpgrade2Prc);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.lblUpgrade2Lvl);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.btnUpgrade2);
+            this.tabPage2.Controls.Add(this.lblUpgrade1Prc);
+            this.tabPage2.Controls.Add(this.lblUpgrade1Lvl);
+            this.tabPage2.Controls.Add(this.btnUpgrade1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage2.Size = new System.Drawing.Size(666, 483);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Buy More Stuff";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblUpgrade2Prc
+            // 
+            this.lblUpgrade2Prc.AutoSize = true;
+            this.lblUpgrade2Prc.Location = new System.Drawing.Point(370, 80);
+            this.lblUpgrade2Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade2Prc.Name = "lblUpgrade2Prc";
+            this.lblUpgrade2Prc.Size = new System.Drawing.Size(59, 29);
+            this.lblUpgrade2Prc.TabIndex = 44;
+            this.lblUpgrade2Prc.Text = "1,000";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(296, 80);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 29);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Price:";
+            // 
+            // lblUpgrade2Lvl
+            // 
+            this.lblUpgrade2Lvl.AutoSize = true;
+            this.lblUpgrade2Lvl.Location = new System.Drawing.Point(247, 80);
+            this.lblUpgrade2Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade2Lvl.Name = "lblUpgrade2Lvl";
+            this.lblUpgrade2Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblUpgrade2Lvl.TabIndex = 42;
+            this.lblUpgrade2Lvl.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(172, 80);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 29);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Level:";
+            // 
+            // lblUpgrade1Prc
+            // 
+            this.lblUpgrade1Prc.AutoSize = true;
+            this.lblUpgrade1Prc.Location = new System.Drawing.Point(370, 21);
+            this.lblUpgrade1Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade1Prc.Name = "lblUpgrade1Prc";
+            this.lblUpgrade1Prc.Size = new System.Drawing.Size(44, 29);
+            this.lblUpgrade1Prc.TabIndex = 39;
+            this.lblUpgrade1Prc.Text = "100";
+            // 
+            // lblUpgrade1Lvl
+            // 
+            this.lblUpgrade1Lvl.AutoSize = true;
+            this.lblUpgrade1Lvl.Location = new System.Drawing.Point(247, 21);
+            this.lblUpgrade1Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade1Lvl.Name = "lblUpgrade1Lvl";
+            this.lblUpgrade1Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblUpgrade1Lvl.TabIndex = 38;
+            this.lblUpgrade1Lvl.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(296, 21);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 29);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Price:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(172, 21);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 29);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Level:";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.btnItem8);
+            this.tabPage1.Controls.Add(this.lblItem8Lvl);
+            this.tabPage1.Controls.Add(this.lblItem8Prc);
+            this.tabPage1.Controls.Add(this.label30);
+            this.tabPage1.Controls.Add(this.label31);
+            this.tabPage1.Controls.Add(this.btnItem7);
+            this.tabPage1.Controls.Add(this.lblItem7Lvl);
+            this.tabPage1.Controls.Add(this.lblItem7Prc);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.btnItem6);
+            this.tabPage1.Controls.Add(this.lblItem6Lvl);
+            this.tabPage1.Controls.Add(this.lblItem6Prc);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.btnItem5);
+            this.tabPage1.Controls.Add(this.lblItem5Lvl);
+            this.tabPage1.Controls.Add(this.lblItem5Prc);
+            this.tabPage1.Controls.Add(this.label26);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.btnItem4);
+            this.tabPage1.Controls.Add(this.lblItem4Lvl);
+            this.tabPage1.Controls.Add(this.lblItem4Prc);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.btnItem3);
+            this.tabPage1.Controls.Add(this.lblItem3Lvl);
+            this.tabPage1.Controls.Add(this.lblItem3Prc);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.btnItem2);
+            this.tabPage1.Controls.Add(this.lblItem2Lvl);
+            this.tabPage1.Controls.Add(this.lblItem2Prc);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.btnItem1);
+            this.tabPage1.Controls.Add(this.lblItem1Lvl);
+            this.tabPage1.Controls.Add(this.lblItem1Prc);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Size = new System.Drawing.Size(666, 483);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Buy stuff";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(172, 80);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 29);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Level:";
+            // 
+            // lblItem2Lvl
+            // 
+            this.lblItem2Lvl.AutoSize = true;
+            this.lblItem2Lvl.Location = new System.Drawing.Point(247, 80);
+            this.lblItem2Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem2Lvl.Name = "lblItem2Lvl";
+            this.lblItem2Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem2Lvl.TabIndex = 6;
+            this.lblItem2Lvl.Text = "0";
+            // 
+            // lblItem2Prc
+            // 
+            this.lblItem2Prc.AutoSize = true;
+            this.lblItem2Prc.Location = new System.Drawing.Point(370, 80);
+            this.lblItem2Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem2Prc.Name = "lblItem2Prc";
+            this.lblItem2Prc.Size = new System.Drawing.Size(48, 29);
+            this.lblItem2Prc.TabIndex = 8;
+            this.lblItem2Prc.Text = "250";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(296, 80);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 29);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Price:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(172, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 29);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Level:";
+            // 
+            // lblItem1Lvl
+            // 
+            this.lblItem1Lvl.AutoSize = true;
+            this.lblItem1Lvl.Location = new System.Drawing.Point(247, 21);
+            this.lblItem1Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem1Lvl.Name = "lblItem1Lvl";
+            this.lblItem1Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem1Lvl.TabIndex = 1;
+            this.lblItem1Lvl.Text = "0";
+            // 
+            // lblItem1Prc
+            // 
+            this.lblItem1Prc.AutoSize = true;
+            this.lblItem1Prc.Location = new System.Drawing.Point(370, 21);
+            this.lblItem1Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem1Prc.Name = "lblItem1Prc";
+            this.lblItem1Prc.Size = new System.Drawing.Size(32, 29);
+            this.lblItem1Prc.TabIndex = 3;
+            this.lblItem1Prc.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(296, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 29);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Price:";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tabControl1.Location = new System.Drawing.Point(281, 70);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(674, 525);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(172, 198);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 29);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Level:";
+            // 
+            // btnItem4
+            // 
+            this.btnItem4.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem4.Enabled = false;
+            this.btnItem4.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem4.Location = new System.Drawing.Point(8, 183);
+            this.btnItem4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem4.Name = "btnItem4";
+            this.btnItem4.Size = new System.Drawing.Size(156, 53);
+            this.btnItem4.TabIndex = 15;
+            this.btnItem4.Text = "Item 4";
+            this.toolTip1.SetToolTip(this.btnItem4, "+300 Auto Clicks");
+            this.btnItem4.UseVisualStyleBackColor = false;
+            this.btnItem4.Click += new System.EventHandler(this.btnItem4_Click);
+            // 
+            // lblItem4Lvl
+            // 
+            this.lblItem4Lvl.AutoSize = true;
+            this.lblItem4Lvl.Location = new System.Drawing.Point(247, 198);
+            this.lblItem4Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem4Lvl.Name = "lblItem4Lvl";
+            this.lblItem4Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem4Lvl.TabIndex = 16;
+            this.lblItem4Lvl.Text = "0";
+            // 
+            // lblItem4Prc
+            // 
+            this.lblItem4Prc.AutoSize = true;
+            this.lblItem4Prc.Location = new System.Drawing.Point(370, 198);
+            this.lblItem4Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem4Prc.Name = "lblItem4Prc";
+            this.lblItem4Prc.Size = new System.Drawing.Size(70, 29);
+            this.lblItem4Prc.TabIndex = 18;
+            this.lblItem4Prc.Text = "10,000";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(296, 198);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 29);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Price:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(172, 139);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 29);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Level:";
+            // 
+            // btnItem3
+            // 
+            this.btnItem3.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem3.Enabled = false;
+            this.btnItem3.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem3.Location = new System.Drawing.Point(8, 124);
+            this.btnItem3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem3.Name = "btnItem3";
+            this.btnItem3.Size = new System.Drawing.Size(156, 53);
+            this.btnItem3.TabIndex = 10;
+            this.btnItem3.Text = "Item 3";
+            this.toolTip1.SetToolTip(this.btnItem3, "+25 Auto Clicks");
+            this.btnItem3.UseVisualStyleBackColor = false;
+            this.btnItem3.Click += new System.EventHandler(this.btnItem3_Click);
+            // 
+            // lblItem3Lvl
+            // 
+            this.lblItem3Lvl.AutoSize = true;
+            this.lblItem3Lvl.Location = new System.Drawing.Point(247, 139);
+            this.lblItem3Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem3Lvl.Name = "lblItem3Lvl";
+            this.lblItem3Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem3Lvl.TabIndex = 11;
+            this.lblItem3Lvl.Text = "0";
+            // 
+            // lblItem3Prc
+            // 
+            this.lblItem3Prc.AutoSize = true;
+            this.lblItem3Prc.Location = new System.Drawing.Point(370, 139);
+            this.lblItem3Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem3Prc.Name = "lblItem3Prc";
+            this.lblItem3Prc.Size = new System.Drawing.Size(59, 29);
+            this.lblItem3Prc.TabIndex = 13;
+            this.lblItem3Prc.Text = "1,250";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(296, 139);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 29);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Price:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(172, 316);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 29);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Level:";
+            // 
+            // btnItem6
+            // 
+            this.btnItem6.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem6.Enabled = false;
+            this.btnItem6.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem6.Location = new System.Drawing.Point(8, 301);
+            this.btnItem6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem6.Name = "btnItem6";
+            this.btnItem6.Size = new System.Drawing.Size(156, 53);
+            this.btnItem6.TabIndex = 25;
+            this.btnItem6.Text = "Item 6";
+            this.toolTip1.SetToolTip(this.btnItem6, "+3,000 Auto Clicks");
+            this.btnItem6.UseVisualStyleBackColor = false;
+            this.btnItem6.Click += new System.EventHandler(this.btnItem6_Click);
+            // 
+            // lblItem6Lvl
+            // 
+            this.lblItem6Lvl.AutoSize = true;
+            this.lblItem6Lvl.Location = new System.Drawing.Point(247, 316);
+            this.lblItem6Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem6Lvl.Name = "lblItem6Lvl";
+            this.lblItem6Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem6Lvl.TabIndex = 26;
+            this.lblItem6Lvl.Text = "0";
+            // 
+            // lblItem6Prc
+            // 
+            this.lblItem6Prc.AutoSize = true;
+            this.lblItem6Prc.Location = new System.Drawing.Point(370, 316);
+            this.lblItem6Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem6Prc.Name = "lblItem6Prc";
+            this.lblItem6Prc.Size = new System.Drawing.Size(86, 29);
+            this.lblItem6Prc.TabIndex = 28;
+            this.lblItem6Prc.Text = "250,000";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(296, 316);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 29);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Price:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(172, 257);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 29);
+            this.label23.TabIndex = 24;
+            this.label23.Text = "Level:";
+            // 
+            // btnItem5
+            // 
+            this.btnItem5.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem5.Enabled = false;
+            this.btnItem5.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem5.Location = new System.Drawing.Point(8, 242);
+            this.btnItem5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem5.Name = "btnItem5";
+            this.btnItem5.Size = new System.Drawing.Size(156, 53);
+            this.btnItem5.TabIndex = 20;
+            this.btnItem5.Text = "Item 5";
+            this.toolTip1.SetToolTip(this.btnItem5, "+1,000 Auto Clicks");
+            this.btnItem5.UseVisualStyleBackColor = false;
+            this.btnItem5.Click += new System.EventHandler(this.btnItem5_Click);
+            // 
+            // lblItem5Lvl
+            // 
+            this.lblItem5Lvl.AutoSize = true;
+            this.lblItem5Lvl.Location = new System.Drawing.Point(247, 257);
+            this.lblItem5Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem5Lvl.Name = "lblItem5Lvl";
+            this.lblItem5Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem5Lvl.TabIndex = 21;
+            this.lblItem5Lvl.Text = "0";
+            // 
+            // lblItem5Prc
+            // 
+            this.lblItem5Prc.AutoSize = true;
+            this.lblItem5Prc.Location = new System.Drawing.Point(370, 257);
+            this.lblItem5Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem5Prc.Name = "lblItem5Prc";
+            this.lblItem5Prc.Size = new System.Drawing.Size(75, 29);
+            this.lblItem5Prc.TabIndex = 23;
+            this.lblItem5Prc.Text = "60,000";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(296, 257);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(66, 29);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Price:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(172, 434);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(67, 29);
+            this.label27.TabIndex = 39;
+            this.label27.Text = "Level:";
+            // 
+            // btnItem8
+            // 
+            this.btnItem8.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem8.Enabled = false;
+            this.btnItem8.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem8.Location = new System.Drawing.Point(8, 419);
+            this.btnItem8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem8.Name = "btnItem8";
+            this.btnItem8.Size = new System.Drawing.Size(156, 53);
+            this.btnItem8.TabIndex = 35;
+            this.btnItem8.Text = "Item 8";
+            this.toolTip1.SetToolTip(this.btnItem8, "+100,000 Auto Clicks");
+            this.btnItem8.UseVisualStyleBackColor = false;
+            this.btnItem8.Click += new System.EventHandler(this.btnItem8_Click);
+            // 
+            // lblItem8Lvl
+            // 
+            this.lblItem8Lvl.AutoSize = true;
+            this.lblItem8Lvl.Location = new System.Drawing.Point(247, 434);
+            this.lblItem8Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem8Lvl.Name = "lblItem8Lvl";
+            this.lblItem8Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem8Lvl.TabIndex = 36;
+            this.lblItem8Lvl.Text = "0";
+            // 
+            // lblItem8Prc
+            // 
+            this.lblItem8Prc.AutoSize = true;
+            this.lblItem8Prc.Location = new System.Drawing.Point(370, 434);
+            this.lblItem8Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem8Prc.Name = "lblItem8Prc";
+            this.lblItem8Prc.Size = new System.Drawing.Size(124, 29);
+            this.lblItem8Prc.TabIndex = 38;
+            this.lblItem8Prc.Text = "250,000,000";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(296, 434);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(66, 29);
+            this.label30.TabIndex = 37;
+            this.label30.Text = "Price:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(172, 375);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(67, 29);
+            this.label31.TabIndex = 34;
+            this.label31.Text = "Level:";
+            // 
+            // btnItem7
+            // 
+            this.btnItem7.BackColor = System.Drawing.Color.Transparent;
+            this.btnItem7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItem7.Enabled = false;
+            this.btnItem7.Font = new System.Drawing.Font("Coolvetica Rg", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem7.Location = new System.Drawing.Point(8, 360);
+            this.btnItem7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnItem7.Name = "btnItem7";
+            this.btnItem7.Size = new System.Drawing.Size(156, 53);
+            this.btnItem7.TabIndex = 30;
+            this.btnItem7.Text = "Item 7";
+            this.toolTip1.SetToolTip(this.btnItem7, "+10,000 Auto Clicks");
+            this.btnItem7.UseVisualStyleBackColor = false;
+            this.btnItem7.Click += new System.EventHandler(this.btnItem7_Click);
+            // 
+            // lblItem7Lvl
+            // 
+            this.lblItem7Lvl.AutoSize = true;
+            this.lblItem7Lvl.Location = new System.Drawing.Point(247, 375);
+            this.lblItem7Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem7Lvl.Name = "lblItem7Lvl";
+            this.lblItem7Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblItem7Lvl.TabIndex = 31;
+            this.lblItem7Lvl.Text = "0";
+            // 
+            // lblItem7Prc
+            // 
+            this.lblItem7Prc.AutoSize = true;
+            this.lblItem7Prc.Location = new System.Drawing.Point(370, 375);
+            this.lblItem7Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItem7Prc.Name = "lblItem7Prc";
+            this.lblItem7Prc.Size = new System.Drawing.Size(108, 29);
+            this.lblItem7Prc.TabIndex = 33;
+            this.lblItem7Prc.Text = "10,000,000";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(296, 375);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(66, 29);
+            this.label34.TabIndex = 32;
+            this.label34.Text = "Price:";
+            // 
+            // lblUpgrade3Prc
+            // 
+            this.lblUpgrade3Prc.AutoSize = true;
+            this.lblUpgrade3Prc.Location = new System.Drawing.Point(370, 139);
+            this.lblUpgrade3Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade3Prc.Name = "lblUpgrade3Prc";
+            this.lblUpgrade3Prc.Size = new System.Drawing.Size(82, 29);
+            this.lblUpgrade3Prc.TabIndex = 49;
+            this.lblUpgrade3Prc.Text = "100,000";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(296, 139);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 29);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Price:";
+            // 
+            // lblUpgrade3Lvl
+            // 
+            this.lblUpgrade3Lvl.AutoSize = true;
+            this.lblUpgrade3Lvl.Location = new System.Drawing.Point(247, 139);
+            this.lblUpgrade3Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade3Lvl.Name = "lblUpgrade3Lvl";
+            this.lblUpgrade3Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblUpgrade3Lvl.TabIndex = 47;
+            this.lblUpgrade3Lvl.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(172, 139);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 29);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Level:";
+            // 
+            // btnUpgrade3
+            // 
+            this.btnUpgrade3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpgrade3.Enabled = false;
+            this.btnUpgrade3.Font = new System.Drawing.Font("Coolvetica Rg", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpgrade3.Location = new System.Drawing.Point(8, 124);
+            this.btnUpgrade3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpgrade3.Name = "btnUpgrade3";
+            this.btnUpgrade3.Size = new System.Drawing.Size(156, 53);
+            this.btnUpgrade3.TabIndex = 45;
+            this.btnUpgrade3.Text = "Upgrade 3";
+            this.toolTip1.SetToolTip(this.btnUpgrade3, "Get Bonus Bars Faster");
+            this.btnUpgrade3.UseVisualStyleBackColor = true;
+            this.btnUpgrade3.Click += new System.EventHandler(this.btnUpgrade3_Click);
+            // 
+            // lblUpgrade4Prc
+            // 
+            this.lblUpgrade4Prc.AutoSize = true;
+            this.lblUpgrade4Prc.Location = new System.Drawing.Point(370, 198);
+            this.lblUpgrade4Prc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade4Prc.Name = "lblUpgrade4Prc";
+            this.lblUpgrade4Prc.Size = new System.Drawing.Size(86, 29);
+            this.lblUpgrade4Prc.TabIndex = 54;
+            this.lblUpgrade4Prc.Text = "750,000";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(296, 198);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 29);
+            this.label16.TabIndex = 53;
+            this.label16.Text = "Price:";
+            // 
+            // lblUpgrade4Lvl
+            // 
+            this.lblUpgrade4Lvl.AutoSize = true;
+            this.lblUpgrade4Lvl.Location = new System.Drawing.Point(247, 198);
+            this.lblUpgrade4Lvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpgrade4Lvl.Name = "lblUpgrade4Lvl";
+            this.lblUpgrade4Lvl.Size = new System.Drawing.Size(25, 29);
+            this.lblUpgrade4Lvl.TabIndex = 52;
+            this.lblUpgrade4Lvl.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(172, 198);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(67, 29);
+            this.label21.TabIndex = 51;
+            this.label21.Text = "Level:";
+            // 
+            // btnUpgrade4
+            // 
+            this.btnUpgrade4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpgrade4.Enabled = false;
+            this.btnUpgrade4.Font = new System.Drawing.Font("Coolvetica Rg", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpgrade4.Location = new System.Drawing.Point(8, 183);
+            this.btnUpgrade4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpgrade4.Name = "btnUpgrade4";
+            this.btnUpgrade4.Size = new System.Drawing.Size(156, 53);
+            this.btnUpgrade4.TabIndex = 50;
+            this.btnUpgrade4.Text = "Upgrade 4";
+            this.toolTip1.SetToolTip(this.btnUpgrade4, "Right Click");
+            this.btnUpgrade4.UseVisualStyleBackColor = true;
+            this.btnUpgrade4.Click += new System.EventHandler(this.btnUpgrade4_Click);
+            // 
             // Game
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -390,10 +970,11 @@
             this.Name = "Game";
             this.Text = "Boring Idle Game";
             this.Load += new System.EventHandler(this.Game_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,32 +985,76 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnButton;
         private System.Windows.Forms.Label lblNumber;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Timer timerNumberUpdater;
+        private System.Windows.Forms.Timer timerLabelUpdater;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ProgressBar progressBarButton;
+        private System.Windows.Forms.Timer timerProgressBar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAutoClick;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblItem1Prc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblItem1Lvl;
         private System.Windows.Forms.Button btnItem1;
-        private System.Windows.Forms.Timer timerNumberUpdater;
-        private System.Windows.Forms.Timer timerLabelUpdater;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label lblItem2Prc;
-        private System.Windows.Forms.Label lblItem2Lvl;
+        private System.Windows.Forms.Label lblUpgrade2Prc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUpgrade2Lvl;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnUpgrade2;
+        private System.Windows.Forms.Label lblUpgrade1Prc;
+        private System.Windows.Forms.Label lblUpgrade1Lvl;
+        private System.Windows.Forms.Button btnUpgrade1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnItem2;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ProgressBar progressBarButton;
-        private System.Windows.Forms.Timer timerProgressBar;
-        private System.Windows.Forms.Label lblItem3Prc;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblItem3Lvl;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblItem2Lvl;
+        private System.Windows.Forms.Label lblItem2Prc;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button btnItem8;
+        private System.Windows.Forms.Label lblItem8Lvl;
+        private System.Windows.Forms.Label lblItem8Prc;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnItem7;
+        private System.Windows.Forms.Label lblItem7Lvl;
+        private System.Windows.Forms.Label lblItem7Prc;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnItem6;
+        private System.Windows.Forms.Label lblItem6Lvl;
+        private System.Windows.Forms.Label lblItem6Prc;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button btnItem5;
+        private System.Windows.Forms.Label lblItem5Lvl;
+        private System.Windows.Forms.Label lblItem5Prc;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnItem4;
+        private System.Windows.Forms.Label lblItem4Lvl;
+        private System.Windows.Forms.Label lblItem4Prc;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnItem3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblAutoClick;
+        private System.Windows.Forms.Label lblItem3Lvl;
+        private System.Windows.Forms.Label lblItem3Prc;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblUpgrade3Prc;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblUpgrade3Lvl;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnUpgrade3;
+        private System.Windows.Forms.Label lblUpgrade4Prc;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblUpgrade4Lvl;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnUpgrade4;
     }
 }
 
