@@ -94,6 +94,12 @@ namespace BoringIdleGame
         Int64 intUpgrade4Lvl = 0;
         Int64 intUpgrade4Prc = 750000;
 
+        //Win
+        bool blWin = false;
+
+        //Date/time
+        DateTime dtCurrent = DateTime.Now;
+        DateTime dtPast = DateTime.Now;
 
         //form load
         private void Game_Load(object sender, EventArgs e)
@@ -151,11 +157,12 @@ namespace BoringIdleGame
             string intUpgrade4String = tr.ReadLine();
             string intUpgrade4LvlString = tr.ReadLine();
             string intUpgrade4PrcString = tr.ReadLine();
+            string dtPastString = tr.ReadLine();
 
 
             //Convert the strings to int
             intButton = Convert.ToInt64(intButtonString);
-            decNumber = Convert.ToInt64(decNumberString);
+            decNumber = Convert.ToDecimal(decNumberString);
             intAutoClicks = Convert.ToInt64(intAutoClicksString);
             decProgressAmount = Convert.ToDecimal(decProgressAmountString);
             intProgressGoal = Convert.ToInt64(intProgressGoalString);
@@ -195,12 +202,16 @@ namespace BoringIdleGame
             intUpgrade4 = Convert.ToInt64(intUpgrade4String);
             intUpgrade4Lvl = Convert.ToInt64(intUpgrade4LvlString);
             intUpgrade4Prc = Convert.ToInt64(intUpgrade4PrcString);
-
+            dtPast = Convert.ToDateTime(dtPastString);
 
             // close the stream
             tr.Close();
+
+            Int64 intMilliseconds = Convert.ToInt64((dtCurrent - dtPast).TotalMilliseconds);
+            decNumber += (intMilliseconds/timerNumberUpdater.Interval) * (intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8);
+
             timerSave.Start();
-            Cursor.Current = Cursors.Default;
+            Cursor.Current = Cursors.Default;            
         }
 
 
@@ -410,6 +421,88 @@ namespace BoringIdleGame
 
             lblAutoClick.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
 
+            if (decNumber >= 79228000000000000000000000000m && blWin == false)
+            {
+                MessageBox.Show("You win! Get a life!", "Winner!");
+                blWin = true;
+                //button
+                intButton = 1;
+                decNumber = 0;
+                intAutoClicks = 0;
+
+                //bonus bar
+                decProgressAmount = 0;
+                intProgressGoal = 1;
+                decProgressAdd = .126m;
+
+                //items
+                //item 1
+                intItem1 = 0;
+                intItem1Lvl = 0;
+                intItem1Prc = 10;
+
+                //item 2
+                intItem2 = 0;
+                intItem2Lvl = 0;
+                intItem2Prc = 250;
+
+                //item 3
+                intItem3 = 0;
+                intItem3Lvl = 0;
+                intItem3Prc = 1250;
+
+                //item 4
+                intItem4 = 0;
+                intItem4Lvl = 0;
+                intItem4Prc = 10000;
+
+                //item 5
+                intItem5 = 0;
+                intItem5Lvl = 0;
+                intItem5Prc = 60000;
+
+                //item 6
+                intItem6 = 0;
+                intItem6Lvl = 0;
+                intItem6Prc = 250000;
+
+                //item 7
+                intItem7 = 0;
+                intItem7Lvl = 0;
+                intItem7Prc = 10000000;
+
+                //item 8
+                intItem8 = 0;
+                intItem8Lvl = 0;
+                intItem8Prc = 250000000;
+
+                //upgrades
+
+                //upgrade 1
+                // upgrade 1 is intButton
+                intUpgrade1Lvl = 1;
+                intUpgrade1Prc = 100;
+
+                //upgrade 2
+                intUpgrade2 = 0;
+                intUpgrade2Lvl = 0;
+                intUpgrade2Prc = 1000;
+
+                //upgrade 3
+                intUpgrade3 = 0;
+                intUpgrade3Lvl = 0;
+                intUpgrade3Prc = 100000;
+
+                //upgrade 4
+                intUpgrade4 = 0;
+                intUpgrade4Lvl = 0;
+                intUpgrade4Prc = 750000;
+
+                
+            }
+
+            dtPast = DateTime.Now;
+
         }
 
 
@@ -498,6 +591,7 @@ namespace BoringIdleGame
             tw.WriteLine(intUpgrade4);
             tw.WriteLine(intUpgrade4Lvl);
             tw.WriteLine(intUpgrade4Prc);
+            tw.WriteLine(dtPast);
 
 
 
@@ -516,8 +610,12 @@ namespace BoringIdleGame
             ++Level;
             lblLevel.Text = String.Format("{0:n0}", Level);
 
-            Price = Convert.ToInt64(Math.Round(Convert.ToDouble(Price) * PrcInc));
-            lblPrice.Text = String.Format("{0:n0}", Price);
+            try
+            {
+                Price = Convert.ToInt64(Math.Round(Convert.ToDouble(Price) * PrcInc));
+                lblPrice.Text = String.Format("{0:n0}", Price);
+            }
+            catch { }
 
             Item += ItemAmount;
         }
@@ -613,6 +711,8 @@ namespace BoringIdleGame
                 }
             }
         }
+
+        
 
     }
 }
