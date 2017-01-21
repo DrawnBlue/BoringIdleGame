@@ -22,77 +22,77 @@ namespace BoringIdleGame
         
         //Initialize variables
         //button
-        int intButton = 1;
-        int intNumber = 0;
-        int intAutoClicks = 0;
+        Int64 intButton = 1;
+        decimal decNumber = 9223372036854775807;
+        Int64 intAutoClicks = 0;
 
         //bonus bar
         decimal decProgressAmount = 0;
-        int intProgressGoal = 1;
+        Int64 intProgressGoal = 1;
         decimal decProgressAdd = .126m;
 
         //items
         //item 1
-        int intItem1 = 0;
-        int intItem1Lvl = 0;
-        int intItem1Prc = 10;
+        Int64 intItem1 = 0;
+        Int64 intItem1Lvl = 0;
+        Int64 intItem1Prc = 10;
 
         //item 2
-        int intItem2 = 0;
-        int intItem2Lvl = 0;
-        int intItem2Prc = 250;
+        Int64 intItem2 = 0;
+        Int64 intItem2Lvl = 0;
+        Int64 intItem2Prc = 250;
 
         //item 3
-        int intItem3 = 0;
-        int intItem3Lvl = 0;
-        int intItem3Prc = 1250;
+        Int64 intItem3 = 0;
+        Int64 intItem3Lvl = 0;
+        Int64 intItem3Prc = 1250;
 
         //item 4
-        int intItem4 = 0;
-        int intItem4Lvl = 0;
-        int intItem4Prc = 10000;
+        Int64 intItem4 = 0;
+        Int64 intItem4Lvl = 0;
+        Int64 intItem4Prc = 10000;
 
         //item 5
-        int intItem5 = 0;
-        int intItem5Lvl = 0;
-        int intItem5Prc = 60000;
+        Int64 intItem5 = 0;
+        Int64 intItem5Lvl = 0;
+        Int64 intItem5Prc = 60000;
 
         //item 6
-        int intItem6 = 0;
-        int intItem6Lvl = 0;
-        int intItem6Prc = 250000;
+        Int64 intItem6 = 0;
+        Int64 intItem6Lvl = 0;
+        Int64 intItem6Prc = 250000;
 
         //item 7
-        int intItem7 = 0;
-        int intItem7Lvl = 0;
-        int intItem7Prc = 10000000;
+        Int64 intItem7 = 0;
+        Int64 intItem7Lvl = 0;
+        Int64 intItem7Prc = 10000000;
 
         //item 8
-        int intItem8 = 0;
-        int intItem8Lvl = 0;
-        int intItem8Prc = 250000000;
+        Int64 intItem8 = 0;
+        Int64 intItem8Lvl = 0;
+        Int64 intItem8Prc = 250000000;
 
         //upgrades
 
         //upgrade 1
         // upgrade 1 is intButton
-        int intUpgrade1Lvl = 1;
-        int intUpgrade1Prc = 100;
+        Int64 intUpgrade1Lvl = 1;
+        Int64 intUpgrade1Prc = 100;
 
         //upgrade 2
-        int intUpgrade2 = 0;
-        int intUpgrade2Lvl = 0;
-        int intUpgrade2Prc = 1000;
+        Int64 intUpgrade2 = 0;
+        Int64 intUpgrade2Lvl = 0;
+        Int64 intUpgrade2Prc = 1000;
 
         //upgrade 3
-        int intUpgrade3 = 0;
-        int intUpgrade3Lvl = 0;
-        int intUpgrade3Prc = 100000;
+        Int64 intUpgrade3 = 0;
+        Int64 intUpgrade3Lvl = 0;
+        Int64 intUpgrade3Prc = 100000;
 
         //upgrade 4
-        int intUpgrade4 = 0;
-        int intUpgrade4Lvl = 0;
-        int intUpgrade4Prc = 750000;
+        Int64 intUpgrade4 = 0;
+        Int64 intUpgrade4Lvl = 0;
+        Int64 intUpgrade4Prc = 750000;
 
 
         //form load
@@ -111,7 +111,7 @@ namespace BoringIdleGame
 
             // read lines of text
             string intButtonString = tr.ReadLine();
-            string intNumberString= tr.ReadLine();
+            string decNumberString= tr.ReadLine();
             string intAutoClicksString = tr.ReadLine();
             string decProgressAmountString = tr.ReadLine();
             string intProgressGoalString = tr.ReadLine();
@@ -154,47 +154,47 @@ namespace BoringIdleGame
 
 
             //Convert the strings to int
-            intButton = Convert.ToInt32(intButtonString);
-            intNumber = Convert.ToInt32(intNumberString);
-            intAutoClicks = Convert.ToInt32(intAutoClicksString);
+            intButton = Convert.ToInt64(intButtonString);
+            decNumber = Convert.ToInt64(decNumberString);
+            intAutoClicks = Convert.ToInt64(intAutoClicksString);
             decProgressAmount = Convert.ToDecimal(decProgressAmountString);
-            intProgressGoal = Convert.ToInt32(intProgressGoalString);
+            intProgressGoal = Convert.ToInt64(intProgressGoalString);
             decProgressAdd = Convert.ToDecimal(decProgressAddString);
-            intItem1 = Convert.ToInt32(intItem1String);
-            intItem1Lvl = Convert.ToInt32(intItem1LvlString);
-            intItem1Prc = Convert.ToInt32(intItem1PrcString);
-            intItem2 = Convert.ToInt32(intItem2String);
-            intItem2Lvl = Convert.ToInt32(intItem2LvlString);
-            intItem2Prc = Convert.ToInt32(intItem2PrcString);
-            intItem3 = Convert.ToInt32(intItem3String);
-            intItem3Lvl = Convert.ToInt32(intItem3LvlString);
-            intItem3Prc = Convert.ToInt32(intItem3PrcString);
-            intItem4 = Convert.ToInt32(intItem4String);
-            intItem4Lvl = Convert.ToInt32(intItem4LvlString);
-            intItem4Prc = Convert.ToInt32(intItem4PrcString);
-            intItem5 = Convert.ToInt32(intItem5String);
-            intItem5Lvl = Convert.ToInt32(intItem5LvlString);
-            intItem5Prc = Convert.ToInt32(intItem5PrcString);
-            intItem6 = Convert.ToInt32(intItem6String);
-            intItem6Lvl = Convert.ToInt32(intItem6LvlString);
-            intItem6Prc = Convert.ToInt32(intItem6PrcString);
-            intItem7 = Convert.ToInt32(intItem7String);
-            intItem7Lvl = Convert.ToInt32(intItem7LvlString);
-            intItem7Prc = Convert.ToInt32(intItem7PrcString);
-            intItem8 = Convert.ToInt32(intItem8String);
-            intItem8Lvl = Convert.ToInt32(intItem8LvlString);
-            intItem8Prc = Convert.ToInt32(intItem8PrcString);
-            intUpgrade1Lvl = Convert.ToInt32(intUpgrade1LvlString);
-            intUpgrade1Prc = Convert.ToInt32(intUpgrade1PrcString);
-            intUpgrade2 = Convert.ToInt32(intUpgrade2String);
-            intUpgrade2Lvl = Convert.ToInt32(intUpgrade2LvlString);
-            intUpgrade2Prc = Convert.ToInt32(intUpgrade2PrcString);
-            intUpgrade3 = Convert.ToInt32(intUpgrade3String);
-            intUpgrade3Lvl = Convert.ToInt32(intUpgrade3LvlString);
-            intUpgrade3Prc = Convert.ToInt32(intUpgrade3PrcString);
-            intUpgrade4 = Convert.ToInt32(intUpgrade4String);
-            intUpgrade4Lvl = Convert.ToInt32(intUpgrade4LvlString);
-            intUpgrade4Prc = Convert.ToInt32(intUpgrade4PrcString);
+            intItem1 = Convert.ToInt64(intItem1String);
+            intItem1Lvl = Convert.ToInt64(intItem1LvlString);
+            intItem1Prc = Convert.ToInt64(intItem1PrcString);
+            intItem2 = Convert.ToInt64(intItem2String);
+            intItem2Lvl = Convert.ToInt64(intItem2LvlString);
+            intItem2Prc = Convert.ToInt64(intItem2PrcString);
+            intItem3 = Convert.ToInt64(intItem3String);
+            intItem3Lvl = Convert.ToInt64(intItem3LvlString);
+            intItem3Prc = Convert.ToInt64(intItem3PrcString);
+            intItem4 = Convert.ToInt64(intItem4String);
+            intItem4Lvl = Convert.ToInt64(intItem4LvlString);
+            intItem4Prc = Convert.ToInt64(intItem4PrcString);
+            intItem5 = Convert.ToInt64(intItem5String);
+            intItem5Lvl = Convert.ToInt64(intItem5LvlString);
+            intItem5Prc = Convert.ToInt64(intItem5PrcString);
+            intItem6 = Convert.ToInt64(intItem6String);
+            intItem6Lvl = Convert.ToInt64(intItem6LvlString);
+            intItem6Prc = Convert.ToInt64(intItem6PrcString);
+            intItem7 = Convert.ToInt64(intItem7String);
+            intItem7Lvl = Convert.ToInt64(intItem7LvlString);
+            intItem7Prc = Convert.ToInt64(intItem7PrcString);
+            intItem8 = Convert.ToInt64(intItem8String);
+            intItem8Lvl = Convert.ToInt64(intItem8LvlString);
+            intItem8Prc = Convert.ToInt64(intItem8PrcString);
+            intUpgrade1Lvl = Convert.ToInt64(intUpgrade1LvlString);
+            intUpgrade1Prc = Convert.ToInt64(intUpgrade1PrcString);
+            intUpgrade2 = Convert.ToInt64(intUpgrade2String);
+            intUpgrade2Lvl = Convert.ToInt64(intUpgrade2LvlString);
+            intUpgrade2Prc = Convert.ToInt64(intUpgrade2PrcString);
+            intUpgrade3 = Convert.ToInt64(intUpgrade3String);
+            intUpgrade3Lvl = Convert.ToInt64(intUpgrade3LvlString);
+            intUpgrade3Prc = Convert.ToInt64(intUpgrade3PrcString);
+            intUpgrade4 = Convert.ToInt64(intUpgrade4String);
+            intUpgrade4Lvl = Convert.ToInt64(intUpgrade4LvlString);
+            intUpgrade4Prc = Convert.ToInt64(intUpgrade4PrcString);
 
 
             // close the stream
@@ -211,8 +211,8 @@ namespace BoringIdleGame
             //right click
             if (e.Button == MouseButtons.Right && intUpgrade4 > 0)
             {
-                intNumber += intButton;
-                lblNumber.Text = String.Format("{0:n0}", intNumber);
+                decNumber += intButton;
+                lblNumber.Text = String.Format("{0:n0}", decNumber);
 
                 if (decProgressAmount < 2)
                     decProgressAmount += decProgressAdd;
@@ -221,8 +221,8 @@ namespace BoringIdleGame
             //left click
             if (e.Button == MouseButtons.Left)
             {
-                intNumber += intButton;
-                lblNumber.Text = String.Format("{0:n0}", intNumber);
+                decNumber += intButton;
+                lblNumber.Text = String.Format("{0:n0}", decNumber);
 
                 if (decProgressAmount < 2)
                     decProgressAmount += decProgressAdd;
@@ -298,7 +298,7 @@ namespace BoringIdleGame
         //Upgrade 2 Button (Auto Clicker Upgrade)
         private void btnUpgrade2_Click(object sender, EventArgs e)
         {
-            Upgrade(ref intUpgrade2, 1, ref intUpgrade2Prc, 2.53, ref intUpgrade2Lvl, lblUpgrade2Prc, lblUpgrade2Lvl);
+            Upgrade(ref intUpgrade2, 1, ref intUpgrade2Prc, 1.74, ref intUpgrade2Lvl, lblUpgrade2Prc, lblUpgrade2Lvl);
             timerNumberUpdater.Interval = Convert.ToInt32(timerNumberUpdater.Interval * 0.93);
         }
 
@@ -321,8 +321,15 @@ namespace BoringIdleGame
         //Numbers per second
         private void timerNumberUpdater_Tick(object sender, EventArgs e)
         {
-            intNumber += intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8;
-            lblNumber.Text = String.Format("{0:n0}", intNumber);
+            try
+            {
+                decNumber += intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8;
+            }
+            catch 
+            {
+
+            }
+            lblNumber.Text = String.Format("{0:n0}", decNumber);
 
         }
 
@@ -339,40 +346,40 @@ namespace BoringIdleGame
             lblAutoClick.Text = "Auto Clicks: " + String.Format("{0:n0}",intAutoClicks);
 
             //Item 1
-            btnItem1.Enabled = (intNumber >= intItem1Prc) ? true : false;
+            btnItem1.Enabled = (decNumber >= intItem1Prc) ? true : false;
 
             //Item 2
-            btnItem2.Enabled = (intNumber >= intItem2Prc) ? true : false;
+            btnItem2.Enabled = (decNumber >= intItem2Prc) ? true : false;
 
             //Item 3
-            btnItem3.Enabled = (intNumber >= intItem3Prc) ? true : false;
+            btnItem3.Enabled = (decNumber >= intItem3Prc) ? true : false;
 
             //Item 4
-            btnItem4.Enabled = (intNumber >= intItem4Prc) ? true : false;
+            btnItem4.Enabled = (decNumber >= intItem4Prc) ? true : false;
 
             //Item 5
-            btnItem5.Enabled = (intNumber >= intItem5Prc) ? true : false;
+            btnItem5.Enabled = (decNumber >= intItem5Prc) ? true : false;
 
             //Item 6
-            btnItem6.Enabled = (intNumber >= intItem6Prc) ? true : false;
+            btnItem6.Enabled = (decNumber >= intItem6Prc) ? true : false;
 
             //Item 7
-            btnItem7.Enabled = (intNumber >= intItem7Prc) ? true : false;
+            btnItem7.Enabled = (decNumber >= intItem7Prc) ? true : false;
 
             //Item 8
-            btnItem8.Enabled = (intNumber >= intItem8Prc) ? true : false;
+            btnItem8.Enabled = (decNumber >= intItem8Prc) ? true : false;
 
             //Upgrade 1
-            btnUpgrade1.Enabled = (intNumber >= intUpgrade1Prc) ? true : false;
+            btnUpgrade1.Enabled = (decNumber >= intUpgrade1Prc) ? true : false;
 
             //Upgrade 2
-            btnUpgrade2.Enabled = (intNumber >= intUpgrade2Prc) ? true : false;
+            btnUpgrade2.Enabled = (decNumber >= intUpgrade2Prc) ? true : false;
 
             //Upgrade 3
-            btnUpgrade3.Enabled = (intNumber >= intUpgrade3Prc) ? true : false;
+            btnUpgrade3.Enabled = (decNumber >= intUpgrade3Prc) ? true : false;
 
             //Upgrade 4
-            btnUpgrade4.Enabled = (intNumber >= intUpgrade4Prc && intUpgrade4 < 1) ? true : false;
+            btnUpgrade4.Enabled = (decNumber >= intUpgrade4Prc && intUpgrade4 < 1) ? true : false;
 
             //Prices and Levels
             lblItem1Lvl.Text = String.Format("{0:n0}", intItem1Lvl);
@@ -420,7 +427,7 @@ namespace BoringIdleGame
 
             if (decProgressAmount > 0)
             {
-                if (progressBarButton.Value + Convert.ToInt32(decProgressAmount) < progressBarButton.Maximum)
+                if (progressBarButton.Value + Convert.ToInt64(decProgressAmount) < progressBarButton.Maximum)
                 {
                     progressBarButton.Value += Convert.ToInt32(decProgressAmount);
                 }
@@ -428,15 +435,15 @@ namespace BoringIdleGame
                 {
                     //decProgressAmount = 0;
                     progressBarButton.Value = 0;
-                    intNumber = Convert.ToInt32(Convert.ToDouble(intNumber) * 1.3);
+                    decNumber = Convert.ToInt64(Convert.ToDouble(decNumber) * 1.3);
                 }
             }
 
-            if (decProgressAmount < 0 && progressBarButton.Value + Convert.ToInt32(decProgressAmount) > 0)
+            if (decProgressAmount < 0 && progressBarButton.Value + Convert.ToInt64(decProgressAmount) > 0)
             {
                 progressBarButton.Value += Convert.ToInt32(decProgressAmount);
             }
-            else if (progressBarButton.Value + Convert.ToInt32(decProgressAmount) < 0)
+            else if (progressBarButton.Value + Convert.ToInt64(decProgressAmount) < 0)
             {
                 progressBarButton.Value = 0;
                 decProgressAmount = 0;
@@ -451,7 +458,7 @@ namespace BoringIdleGame
 
             // write lines of text to the file
             tw.WriteLine(intButton);
-            tw.WriteLine(intNumber);
+            tw.WriteLine(decNumber);
             tw.WriteLine(intAutoClicks);
             tw.WriteLine(decProgressAdd);
             tw.WriteLine(intProgressGoal);
@@ -501,15 +508,15 @@ namespace BoringIdleGame
 
 
         //upgrade method
-        public void Upgrade(ref int Item, int ItemAmount, ref int Price, double PrcInc, ref int Level, Label lblPrice, Label lblLevel)
+        public void Upgrade(ref Int64 Item, Int64 ItemAmount, ref Int64 Price, double PrcInc, ref Int64 Level, Label lblPrice, Label lblLevel)
         {
-            intNumber -= Price;
-            lblNumber.Text = String.Format("{0:n0}", intNumber);
+            decNumber -= Price;
+            lblNumber.Text = String.Format("{0:n0}", decNumber);
 
             ++Level;
             lblLevel.Text = String.Format("{0:n0}", Level);
 
-            Price = Convert.ToInt32(Math.Round(Convert.ToDouble(Price) * PrcInc));
+            Price = Convert.ToInt64(Math.Round(Convert.ToDouble(Price) * PrcInc));
             lblPrice.Text = String.Format("{0:n0}", Price);
 
             Item += ItemAmount;
@@ -532,7 +539,7 @@ namespace BoringIdleGame
                     //Initialize variables
                     //button
                     intButton = 1;
-                    intNumber = 0;
+                    decNumber = 0;
                     intAutoClicks = 0;
 
                     //bonus bar
@@ -606,5 +613,6 @@ namespace BoringIdleGame
                 }
             }
         }
+
     }
 }

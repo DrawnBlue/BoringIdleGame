@@ -48,6 +48,7 @@
             this.btnItem7 = new System.Windows.Forms.Button();
             this.btnUpgrade3 = new System.Windows.Forms.Button();
             this.btnUpgrade4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.timerProgressBar = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.lblAutoClick = new System.Windows.Forms.Label();
@@ -103,7 +104,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.timerSave = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -367,6 +367,19 @@
             this.btnUpgrade4.UseVisualStyleBackColor = true;
             this.btnUpgrade4.Click += new System.EventHandler(this.btnUpgrade4_Click);
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.button1.Location = new System.Drawing.Point(17, 496);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(255, 38);
+            this.button1.TabIndex = 9;
+            this.button1.TabStop = false;
+            this.button1.Text = "Reset";
+            this.toolTip1.SetToolTip(this.button1, "This will reset everything.");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // timerProgressBar
             // 
             this.timerProgressBar.Interval = 10;
@@ -384,7 +397,7 @@
             // lblAutoClick
             // 
             this.lblAutoClick.AutoSize = true;
-            this.lblAutoClick.Location = new System.Drawing.Point(804, 9);
+            this.lblAutoClick.Location = new System.Drawing.Point(12, 164);
             this.lblAutoClick.Name = "lblAutoClick";
             this.lblAutoClick.Size = new System.Drawing.Size(147, 29);
             this.lblAutoClick.TabIndex = 8;
@@ -412,11 +425,11 @@
             this.tabPage2.Controls.Add(this.btnUpgrade1);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 483);
+            this.tabPage2.Size = new System.Drawing.Size(666, 499);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buy More Stuff";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -969,19 +982,6 @@
             // 
             this.timerSave.Interval = 1000;
             this.timerSave.Tick += new System.EventHandler(this.timerSave_Tick);
-            // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.button1.Location = new System.Drawing.Point(17, 496);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 38);
-            this.button1.TabIndex = 9;
-            this.button1.TabStop = false;
-            this.button1.Text = "Reset";
-            this.toolTip1.SetToolTip(this.button1, "This will reset everything.");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Game
             // 
