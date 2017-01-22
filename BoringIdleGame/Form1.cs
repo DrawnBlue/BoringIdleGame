@@ -238,80 +238,7 @@ namespace BoringIdleGame
                 if (dtPast.AddMilliseconds(1000) < lastModified) 
                 {
                     MessageBox.Show("The game has been reset because you tried to cheat. Next time, heed the warning.", "Cheater");
-
-                    //button
-                    intButton = 1;
-                    decNumber = 0;
-                    intAutoClicks = 0;
-
-
-                    //items
-                    //item 1
-                    intItem1 = 0;
-                    intItem1Lvl = 0;
-                    intItem1Prc = 10;
-
-                    //item 2
-                    intItem2 = 0;
-                    intItem2Lvl = 0;
-                    intItem2Prc = 250;
-
-                    //item 3
-                    intItem3 = 0;
-                    intItem3Lvl = 0;
-                    intItem3Prc = 5000;
-
-                    //item 4
-                    intItem4 = 0;
-                    intItem4Lvl = 0;
-                    intItem4Prc = 100000;
-
-                    //item 5
-                    intItem5 = 0;
-                    intItem5Lvl = 0;
-                    intItem5Prc = 1000000;
-
-                    //item 6
-                    intItem6 = 0;
-                    intItem6Lvl = 0;
-                    intItem6Prc = 25000000;
-
-                    //item 7
-                    intItem7 = 0;
-                    intItem7Lvl = 0;
-                    intItem7Prc = 1000000000;
-
-                    //item 8
-                    intItem8 = 0;
-                    intItem8Lvl = 0;
-                    intItem8Prc = 100000000000;
-
-                    //upgrades
-
-                    //upgrade 1
-                    // upgrade 1 is intButton
-                    intUpgrade1Lvl = 1;
-                    intUpgrade1Prc = 100;
-
-                    //upgrade 2
-                    intUpgrade2 = 0;
-                    intUpgrade2Lvl = 0;
-                    intUpgrade2Prc = 1000;
-
-                    //upgrade 3
-                    intUpgrade3 = 0;
-                    intUpgrade3Lvl = 0;
-                    intUpgrade3Prc = 100000;
-
-                    //upgrade 4
-                    intUpgrade4 = 0;
-                    intUpgrade4Lvl = 0;
-                    intUpgrade4Prc = 1500000;
-
-                    //Upgrade 5
-                    // upgrade 5 is intButton
-                    intUpgrade5Lvl = 0;
-                    intUpgrade5Prc = 10000000;
+                    Reset();
                 }
             }
             catch
@@ -555,82 +482,7 @@ namespace BoringIdleGame
             {
                 MessageBox.Show("You win! Get a life!", "Winner!");
                 blWin = true;
-
-                //Initialize variables
-                //button
-                intButton = 1;
-                decNumber = 0;
-                intAutoClicks = 0;
-
-
-                //items
-                //item 1
-                intItem1 = 0;
-                intItem1Lvl = 0;
-                intItem1Prc = 10;
-
-                //item 2
-                intItem2 = 0;
-                intItem2Lvl = 0;
-                intItem2Prc = 250;
-
-                //item 3
-                intItem3 = 0;
-                intItem3Lvl = 0;
-                intItem3Prc = 5000;
-
-                //item 4
-                intItem4 = 0;
-                intItem4Lvl = 0;
-                intItem4Prc = 100000;
-
-                //item 5
-                intItem5 = 0;
-                intItem5Lvl = 0;
-                intItem5Prc = 1000000;
-
-                //item 6
-                intItem6 = 0;
-                intItem6Lvl = 0;
-                intItem6Prc = 25000000;
-
-                //item 7
-                intItem7 = 0;
-                intItem7Lvl = 0;
-                intItem7Prc = 1000000000;
-
-                //item 8
-                intItem8 = 0;
-                intItem8Lvl = 0;
-                intItem8Prc = 100000000000;
-
-                //upgrades
-
-                //upgrade 1
-                // upgrade 1 is intButton
-                intUpgrade1Lvl = 1;
-                intUpgrade1Prc = 100;
-
-                //upgrade 2
-                intUpgrade2 = 0;
-                intUpgrade2Lvl = 0;
-                intUpgrade2Prc = 1000;
-
-                //upgrade 3
-                intUpgrade3 = 0;
-                intUpgrade3Lvl = 0;
-                intUpgrade3Prc = 100000;
-
-                //upgrade 4
-                intUpgrade4 = 0;
-                intUpgrade4Lvl = 0;
-                intUpgrade4Prc = 1500000;
-
-                //Upgrade 5
-                // upgrade 5 is intButton
-                intUpgrade5Lvl = 0;
-                intUpgrade5Prc = 10000000;
-
+                Reset();
                 blWin = false;
 
 
@@ -768,84 +620,88 @@ namespace BoringIdleGame
                 if (confirmResult2 == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    //button
-                     intButton = 1;
-                     decNumber = 0;
-                     intAutoClicks = 0;
-
-
-                    //items
-                    //item 1
-                     intItem1 = 0;
-                     intItem1Lvl = 0;
-                     intItem1Prc = 10;
-
-                    //item 2
-                     intItem2 = 0;
-                     intItem2Lvl = 0;
-                     intItem2Prc = 250;
-
-                    //item 3
-                     intItem3 = 0;
-                     intItem3Lvl = 0;
-                     intItem3Prc = 5000;
-
-                    //item 4
-                     intItem4 = 0;
-                     intItem4Lvl = 0;
-                     intItem4Prc = 100000;
-
-                    //item 5
-                     intItem5 = 0;
-                     intItem5Lvl = 0;
-                     intItem5Prc = 1000000;
-
-                    //item 6
-                     intItem6 = 0;
-                     intItem6Lvl = 0;
-                     intItem6Prc = 25000000;
-
-                    //item 7
-                     intItem7 = 0;
-                     intItem7Lvl = 0;
-                     intItem7Prc = 1000000000;
-
-                    //item 8
-                     intItem8 = 0;
-                     intItem8Lvl = 0;
-                     intItem8Prc = 100000000000;
-
-                    //upgrades
-
-                    //upgrade 1
-                    // upgrade 1 is intButton
-                     intUpgrade1Lvl = 1;
-                     intUpgrade1Prc = 100;
-
-                    //upgrade 2
-                     intUpgrade2 = 0;
-                     intUpgrade2Lvl = 0;
-                     intUpgrade2Prc = 1000;
-
-                    //upgrade 3
-                     intUpgrade3 = 0;
-                     intUpgrade3Lvl = 0;
-                     intUpgrade3Prc = 100000;
-
-                    //upgrade 4
-                     intUpgrade4 = 0;
-                     intUpgrade4Lvl = 0;
-                     intUpgrade4Prc = 1500000;
-
-                    //Upgrade 5
-                    // upgrade 5 is intButton
-                     intUpgrade5Lvl = 0;
-                     intUpgrade5Prc = 10000000;
+                    Reset();
                     Cursor.Current = Cursors.Default;
                 }
             }
         }
 
+        public void Reset()
+        {
+            //button
+            intButton = 1;
+            decNumber = 0;
+            intAutoClicks = 0;
+
+
+            //items
+            //item 1
+            intItem1 = 0;
+            intItem1Lvl = 0;
+            intItem1Prc = 10;
+
+            //item 2
+            intItem2 = 0;
+            intItem2Lvl = 0;
+            intItem2Prc = 250;
+
+            //item 3
+            intItem3 = 0;
+            intItem3Lvl = 0;
+            intItem3Prc = 5000;
+
+            //item 4
+            intItem4 = 0;
+            intItem4Lvl = 0;
+            intItem4Prc = 100000;
+
+            //item 5
+            intItem5 = 0;
+            intItem5Lvl = 0;
+            intItem5Prc = 1000000;
+
+            //item 6
+            intItem6 = 0;
+            intItem6Lvl = 0;
+            intItem6Prc = 25000000;
+
+            //item 7
+            intItem7 = 0;
+            intItem7Lvl = 0;
+            intItem7Prc = 1000000000;
+
+            //item 8
+            intItem8 = 0;
+            intItem8Lvl = 0;
+            intItem8Prc = 100000000000;
+
+            //upgrades
+
+            //upgrade 1
+            // upgrade 1 is intButton
+            intUpgrade1Lvl = 1;
+            intUpgrade1Prc = 100;
+
+            //upgrade 2
+            intUpgrade2 = 0;
+            intUpgrade2Lvl = 0;
+            intUpgrade2Prc = 1000;
+
+            //upgrade 3
+            intUpgrade3 = 0;
+            intUpgrade3Lvl = 0;
+            intUpgrade3Prc = 100000;
+
+            //upgrade 4
+            intUpgrade4 = 0;
+            intUpgrade4Lvl = 0;
+            intUpgrade4Prc = 1500000;
+
+            //Upgrade 5
+            // upgrade 5 is intButton
+            intUpgrade5Lvl = 0;
+            intUpgrade5Prc = 10000000;
+        }
 
     }
 }
