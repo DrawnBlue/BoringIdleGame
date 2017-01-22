@@ -129,6 +129,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.txtAutoClicks = new System.Windows.Forms.TextBox();
+            this.txtButtonClick = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -484,11 +485,11 @@
             this.tabPage2.Controls.Add(this.btnUpgrade1);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 499);
+            this.tabPage2.Size = new System.Drawing.Size(666, 483);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buy More Stuff";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1236,10 +1237,24 @@
             this.txtAutoClicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAutoClicks.Enter += new System.EventHandler(this.txtAutoClicks_Enter);
             // 
+            // txtButtonClick
+            // 
+            this.txtButtonClick.BackColor = System.Drawing.SystemColors.Control;
+            this.txtButtonClick.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtButtonClick.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtButtonClick.Location = new System.Drawing.Point(671, 38);
+            this.txtButtonClick.Name = "txtButtonClick";
+            this.txtButtonClick.ReadOnly = true;
+            this.txtButtonClick.Size = new System.Drawing.Size(280, 29);
+            this.txtButtonClick.TabIndex = 23;
+            this.txtButtonClick.Text = "Per Button Click: 0";
+            this.txtButtonClick.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Game
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(967, 640);
+            this.Controls.Add(this.txtButtonClick);
             this.Controls.Add(this.txtAutoClicks);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.prAchievement10);
@@ -1381,6 +1396,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button btnPrestige;
         private System.Windows.Forms.TextBox txtAutoClicks;
+        private System.Windows.Forms.TextBox txtButtonClick;
     }
 }
 

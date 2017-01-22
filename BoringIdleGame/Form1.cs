@@ -572,6 +572,7 @@ namespace BoringIdleGame
             lblUpgrade5Prc.Text = String.Format("{0:n0}", intUpgrade5Prc);
 
             txtAutoClicks.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
+            txtButtonClick.Text = "Per Button Click: " + String.Format("{0:n0}", intButton);
 
             if (decNumber >= 79228000000000000000000000000m && blWin == false)
             {
@@ -967,6 +968,7 @@ namespace BoringIdleGame
             intAutoClicks = (intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8) * intPrestigeMultiplier;
             txtAutoClicks.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
             AutoAchievement(prAchievement10, 100, 1000, 10000, 100000, 100000, 10000000, intAutoClicks);
+            txtButtonClick.Text = "Per Button Click: " + String.Format("{0:n0}", intButton);
 
         }
 
