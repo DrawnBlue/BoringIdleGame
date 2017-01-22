@@ -50,10 +50,14 @@
             this.btnUpgrade4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUpgrade5 = new System.Windows.Forms.Button();
+            this.btnPrestige = new System.Windows.Forms.Button();
             this.timerProgressBar = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.lblAutoClick = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblPrestigeScore = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblPrestigeLvl = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.lblUpgrade5Prc = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lblUpgrade5Lvl = new System.Windows.Forms.Label();
@@ -109,6 +113,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.timerSave = new System.Windows.Forms.Timer(this.components);
+            this.chkMuteSound = new System.Windows.Forms.CheckBox();
+            this.prAchievement1 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement2 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement3 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement4 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement8 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement7 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement6 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement5 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement9 = new System.Windows.Forms.ProgressBar();
+            this.prAchievement10 = new System.Windows.Forms.ProgressBar();
+            this.timerAchievements = new System.Windows.Forms.Timer(this.components);
+            this.toolTipAch = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.txtAutoClicks = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -139,6 +159,7 @@
             this.toolTip1.SetToolTip(this.btnButton, "Click");
             this.btnButton.UseVisualStyleBackColor = true;
             this.btnButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnButton_MouseDown);
+            this.btnButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnButton_MouseUp);
             // 
             // lblNumber
             // 
@@ -373,6 +394,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.ForeColor = System.Drawing.Color.OrangeRed;
             this.button1.Location = new System.Drawing.Point(17, 496);
             this.button1.Name = "button1";
@@ -400,6 +422,22 @@
             this.btnUpgrade5.UseVisualStyleBackColor = true;
             this.btnUpgrade5.Click += new System.EventHandler(this.btnUpgrade5_Click);
             // 
+            // btnPrestige
+            // 
+            this.btnPrestige.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrestige.Enabled = false;
+            this.btnPrestige.Font = new System.Drawing.Font("Coolvetica Rg", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrestige.Location = new System.Drawing.Point(8, 301);
+            this.btnPrestige.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnPrestige.Name = "btnPrestige";
+            this.btnPrestige.Size = new System.Drawing.Size(156, 53);
+            this.btnPrestige.TabIndex = 60;
+            this.btnPrestige.TabStop = false;
+            this.btnPrestige.Text = "Prestige";
+            this.toolTip1.SetToolTip(this.btnPrestige, "+10,000 per Button Click");
+            this.btnPrestige.UseVisualStyleBackColor = true;
+            this.btnPrestige.Click += new System.EventHandler(this.btnPrestige_Click);
+            // 
             // timerProgressBar
             // 
             this.timerProgressBar.Interval = 10;
@@ -414,17 +452,13 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Hover over things to see\r\nwhat they do.\r\n";
             // 
-            // lblAutoClick
-            // 
-            this.lblAutoClick.AutoSize = true;
-            this.lblAutoClick.Location = new System.Drawing.Point(12, 164);
-            this.lblAutoClick.Name = "lblAutoClick";
-            this.lblAutoClick.Size = new System.Drawing.Size(147, 29);
-            this.lblAutoClick.TabIndex = 8;
-            this.lblAutoClick.Text = "Auto Clicks: 0";
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblPrestigeScore);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.lblPrestigeLvl);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.btnPrestige);
             this.tabPage2.Controls.Add(this.lblUpgrade5Prc);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.lblUpgrade5Lvl);
@@ -458,6 +492,46 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buy More Stuff";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblPrestigeScore
+            // 
+            this.lblPrestigeScore.AutoSize = true;
+            this.lblPrestigeScore.Location = new System.Drawing.Point(411, 316);
+            this.lblPrestigeScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrestigeScore.Name = "lblPrestigeScore";
+            this.lblPrestigeScore.Size = new System.Drawing.Size(20, 29);
+            this.lblPrestigeScore.TabIndex = 64;
+            this.lblPrestigeScore.Text = "1";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(296, 316);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(107, 29);
+            this.label28.TabIndex = 63;
+            this.label28.Text = "Multiplier:";
+            // 
+            // lblPrestigeLvl
+            // 
+            this.lblPrestigeLvl.AutoSize = true;
+            this.lblPrestigeLvl.Location = new System.Drawing.Point(247, 316);
+            this.lblPrestigeLvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrestigeLvl.Name = "lblPrestigeLvl";
+            this.lblPrestigeLvl.Size = new System.Drawing.Size(25, 29);
+            this.lblPrestigeLvl.TabIndex = 62;
+            this.lblPrestigeLvl.Text = "0";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(172, 316);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(67, 29);
+            this.label32.TabIndex = 61;
+            this.label32.Text = "Level:";
             // 
             // lblUpgrade5Prc
             // 
@@ -1048,12 +1122,138 @@
             this.timerSave.Interval = 10;
             this.timerSave.Tick += new System.EventHandler(this.timerSave_Tick);
             // 
+            // chkMuteSound
+            // 
+            this.chkMuteSound.AutoSize = true;
+            this.chkMuteSound.Location = new System.Drawing.Point(17, 457);
+            this.chkMuteSound.Name = "chkMuteSound";
+            this.chkMuteSound.Size = new System.Drawing.Size(152, 33);
+            this.chkMuteSound.TabIndex = 10;
+            this.chkMuteSound.Text = "Mute Sound";
+            this.chkMuteSound.UseVisualStyleBackColor = true;
+            // 
+            // prAchievement1
+            // 
+            this.prAchievement1.Location = new System.Drawing.Point(13, 197);
+            this.prAchievement1.Name = "prAchievement1";
+            this.prAchievement1.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement1.TabIndex = 11;
+            // 
+            // prAchievement2
+            // 
+            this.prAchievement2.Location = new System.Drawing.Point(13, 223);
+            this.prAchievement2.Name = "prAchievement2";
+            this.prAchievement2.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement2.TabIndex = 12;
+            // 
+            // prAchievement3
+            // 
+            this.prAchievement3.Location = new System.Drawing.Point(13, 249);
+            this.prAchievement3.Name = "prAchievement3";
+            this.prAchievement3.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement3.TabIndex = 13;
+            // 
+            // prAchievement4
+            // 
+            this.prAchievement4.Location = new System.Drawing.Point(13, 275);
+            this.prAchievement4.Name = "prAchievement4";
+            this.prAchievement4.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement4.TabIndex = 14;
+            // 
+            // prAchievement8
+            // 
+            this.prAchievement8.Location = new System.Drawing.Point(13, 379);
+            this.prAchievement8.Name = "prAchievement8";
+            this.prAchievement8.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement8.TabIndex = 18;
+            // 
+            // prAchievement7
+            // 
+            this.prAchievement7.Location = new System.Drawing.Point(13, 353);
+            this.prAchievement7.Name = "prAchievement7";
+            this.prAchievement7.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement7.TabIndex = 17;
+            // 
+            // prAchievement6
+            // 
+            this.prAchievement6.Location = new System.Drawing.Point(13, 327);
+            this.prAchievement6.Name = "prAchievement6";
+            this.prAchievement6.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement6.TabIndex = 16;
+            // 
+            // prAchievement5
+            // 
+            this.prAchievement5.Location = new System.Drawing.Point(13, 301);
+            this.prAchievement5.Name = "prAchievement5";
+            this.prAchievement5.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement5.TabIndex = 15;
+            // 
+            // prAchievement9
+            // 
+            this.prAchievement9.Location = new System.Drawing.Point(13, 405);
+            this.prAchievement9.Name = "prAchievement9";
+            this.prAchievement9.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement9.TabIndex = 19;
+            // 
+            // prAchievement10
+            // 
+            this.prAchievement10.Location = new System.Drawing.Point(13, 433);
+            this.prAchievement10.Name = "prAchievement10";
+            this.prAchievement10.Size = new System.Drawing.Size(260, 20);
+            this.prAchievement10.TabIndex = 20;
+            // 
+            // timerAchievements
+            // 
+            this.timerAchievements.Interval = 1;
+            this.timerAchievements.Tick += new System.EventHandler(this.timerAchievements_Tick);
+            // 
+            // toolTipAch
+            // 
+            this.toolTipAch.AutomaticDelay = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(66, 164);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 29);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Achievements";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTipAch.SetToolTip(this.label11, "Earn Rewards by Completing Achievements");
+            // 
+            // txtAutoClicks
+            // 
+            this.txtAutoClicks.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAutoClicks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAutoClicks.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtAutoClicks.Location = new System.Drawing.Point(671, 12);
+            this.txtAutoClicks.Name = "txtAutoClicks";
+            this.txtAutoClicks.ReadOnly = true;
+            this.txtAutoClicks.Size = new System.Drawing.Size(280, 29);
+            this.txtAutoClicks.TabIndex = 22;
+            this.txtAutoClicks.Text = "Auto Clicks: 0";
+            this.txtAutoClicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAutoClicks.Enter += new System.EventHandler(this.txtAutoClicks_Enter);
+            // 
             // Game
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(967, 640);
+            this.Controls.Add(this.txtAutoClicks);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.prAchievement10);
+            this.Controls.Add(this.prAchievement9);
+            this.Controls.Add(this.prAchievement8);
+            this.Controls.Add(this.prAchievement7);
+            this.Controls.Add(this.prAchievement6);
+            this.Controls.Add(this.prAchievement5);
+            this.Controls.Add(this.prAchievement4);
+            this.Controls.Add(this.prAchievement3);
+            this.Controls.Add(this.prAchievement2);
+            this.Controls.Add(this.prAchievement1);
+            this.Controls.Add(this.chkMuteSound);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblAutoClick);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.progressBarButton);
             this.Controls.Add(this.tabControl1);
@@ -1089,7 +1289,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Timer timerProgressBar;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblAutoClick;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label3;
@@ -1161,6 +1360,27 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnUpgrade5;
         private System.Windows.Forms.ProgressBar progressBarButton;
+        private System.Windows.Forms.CheckBox chkMuteSound;
+        private System.Windows.Forms.ProgressBar prAchievement1;
+        private System.Windows.Forms.ProgressBar prAchievement2;
+        private System.Windows.Forms.ProgressBar prAchievement3;
+        private System.Windows.Forms.ProgressBar prAchievement4;
+        private System.Windows.Forms.ProgressBar prAchievement8;
+        private System.Windows.Forms.ProgressBar prAchievement7;
+        private System.Windows.Forms.ProgressBar prAchievement6;
+        private System.Windows.Forms.ProgressBar prAchievement5;
+        private System.Windows.Forms.ProgressBar prAchievement9;
+        private System.Windows.Forms.ProgressBar prAchievement10;
+        private System.Windows.Forms.Timer timerAchievements;
+        private System.Windows.Forms.ToolTip toolTipAch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPrestigeScore;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblPrestigeLvl;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btnPrestige;
+        private System.Windows.Forms.TextBox txtAutoClicks;
     }
 }
 

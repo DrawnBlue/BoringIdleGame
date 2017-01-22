@@ -22,13 +22,18 @@ namespace BoringIdleGame
 
 
 
-        
+
 
         //Initialize variables
+        //Sound effects
+        System.Media.SoundPlayer sndClick = new System.Media.SoundPlayer(BoringIdleGame.Properties.Resources.Click);
+        System.Media.SoundPlayer sndClickRelease = new System.Media.SoundPlayer(BoringIdleGame.Properties.Resources.ClickRelease);
+
         //button
         Int64 intButton = 1;
         decimal decNumber = 0;
         Int64 intAutoClicks = 0;
+        decimal decClicks = 0;
 
 
         //items
@@ -99,13 +104,17 @@ namespace BoringIdleGame
         Int64 intUpgrade5Lvl = 0;
         Int64 intUpgrade5Prc = 10000000;
 
+        //Prestige
+        Int64 intPrestigeLvl = 0;
+        Int64 intPrestigeMultiplier = 1;
+
         //Win
         bool blWin = false; //This is if you reach the max number
 
         //Date/time
         DateTime dtCurrent = DateTime.Now; //The current date
         DateTime dtPast = DateTime.Now; //The date since last login
-        DateTime lastModified = System.IO.File.GetLastWriteTime("SavedGame.txt");
+        DateTime lastModified = System.IO.File.GetLastWriteTime("BoringIdleGame.Properties.Resources.SavedGame");
 
 
         //Bonus Bar
@@ -123,6 +132,8 @@ namespace BoringIdleGame
             timerNumberUpdater.Start();
             timerLabelUpdater.Start();
             timerProgressBar.Start();
+            timerAchievements.Start();
+
 
 
             //Load
@@ -130,13 +141,14 @@ namespace BoringIdleGame
             // create reader & open file
             try
             {
-                TextReader tr = new StreamReader("SavedGame.txt");
+                TextReader tr = new StreamReader("BoringIdleGame.Properties.Resources.SavedGame");
 
                 // read lines of text
                 tr.ReadLine();
                 string intButtonString = tr.ReadLine();
                 string decNumberString = tr.ReadLine();
                 string intAutoClicksString = tr.ReadLine();
+                string decClicksString = tr.ReadLine();
                 string intItem1String = tr.ReadLine();
                 string intItem1LvlString = tr.ReadLine();
                 string intItem1PrcString = tr.ReadLine();
@@ -175,11 +187,14 @@ namespace BoringIdleGame
                 string dtPastString = tr.ReadLine();
                 string intUpgrade5LvlString = tr.ReadLine();
                 string intUpgrade5PrcString = tr.ReadLine();
+                string intPrestigeLvlString = tr.ReadLine();
+                string intPrestigeMultiplierString = tr.ReadLine();
 
                 //Convert the strings to int
                 intButton = Convert.ToInt64(intButtonString);
                 decNumber = Convert.ToDecimal(decNumberString);
                 intAutoClicks = Convert.ToInt64(intAutoClicksString);
+                decClicks = Convert.ToDecimal(decClicksString);
                 intItem1 = Convert.ToInt64(intItem1String);
                 intItem1Lvl = Convert.ToInt64(intItem1LvlString);
                 intItem1Prc = Convert.ToInt64(intItem1PrcString);
@@ -218,9 +233,13 @@ namespace BoringIdleGame
                 dtPast = Convert.ToDateTime(dtPastString);
                 intUpgrade5Lvl = Convert.ToInt64(intUpgrade5LvlString);
                 intUpgrade5Prc = Convert.ToInt64(intUpgrade5PrcString);
+                intPrestigeLvl = Convert.ToInt64(intPrestigeLvlString);
+                intPrestigeMultiplier = Convert.ToInt64(intPrestigeMultiplierString);
 
                 // close the stream
                 tr.Close();
+
+
             }
             catch
             { }
@@ -238,10 +257,24 @@ namespace BoringIdleGame
                 {
                     MessageBox.Show("The game has been reset because you tried to cheat. Next time, heed the warning.", "Cheater");
                     Reset();
+                    intPrestigeLvl = 0;
+                    intPrestigeMultiplier = 1;
                 }
             }
             catch
             { }
+
+            //Achievements
+            ItemAchievement(prAchievement1, 10, 100, 100, 10000, 1000, 100000, intItem1Lvl, 1);
+            ItemAchievement(prAchievement2, 10, 1000, 100, 100000, 1000, 1000000, intItem2Lvl, 2);
+            ItemAchievement(prAchievement3, 10, 10000, 100, 1000000, 1000, 10000000, intItem3Lvl, 3);
+            ItemAchievement(prAchievement4, 10, 100000, 100, 10000000, 1000, 100000000, intItem4Lvl, 4);
+            ItemAchievement(prAchievement5, 10, 1000000, 100, 100000000, 1000, 1000000000, intItem5Lvl, 5);
+            ItemAchievement(prAchievement6, 10, 10000000, 100, 1000000000, 1000, 10000000000, intItem6Lvl, 6);
+            ItemAchievement(prAchievement7, 10, 100000000, 100, 10000000000, 1000, 100000000000, intItem7Lvl, 7);
+            ItemAchievement(prAchievement8, 10, 1000000000, 100, 100000000000, 1000, 1000000000000, intItem8Lvl, 8);
+            ButtonAchievement(prAchievement9, 100, 100, 10000, 10000, 1000000, 10000000, Convert.ToInt64(decClicks));
+            AutoAchievement(prAchievement10, 100, 1000, 10000, 100000, 100000, 10000000, intAutoClicks);
 
             //start saving
             timerSave.Start();
@@ -257,26 +290,45 @@ namespace BoringIdleGame
             //right click
             if (e.Button == MouseButtons.Right && intUpgrade4 > 0)
             {
-                decNumber += intButton;
+                decNumber += intButton * intPrestigeMultiplier;
                 lblNumber.Text = String.Format("{0:n0}", decNumber);
 
                 //reset bonus bar
                 dbBonusBar = 0;
                 if (progressBarButton.Value != progressBarButton.Maximum)
                     progressBarButton.Value += 1;
+
+                decClicks++;
+                ButtonAchievement(prAchievement9, 100, 100, 10000, 10000, 1000000, 10000000, Convert.ToInt64(decClicks));
                 
             }
 
             //left click
             if (e.Button == MouseButtons.Left)
             {
-                decNumber += intButton;
+                decNumber += intButton * intPrestigeMultiplier;
                 lblNumber.Text = String.Format("{0:n0}", decNumber);
 
                 //reset bonus bar
                 dbBonusBar = 0;
                 if (progressBarButton.Value != progressBarButton.Maximum)
                     progressBarButton.Value += 1;
+
+                decClicks++;
+                ButtonAchievement(prAchievement9, 100, 100, 10000, 10000, 1000000, 10000000, Convert.ToInt64(decClicks));
+            }
+            if (chkMuteSound.Checked == false)
+            {
+                sndClick.Play();
+            }
+            
+        }
+        //release the button
+        private void btnButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (chkMuteSound.Checked == false)
+            {
+                sndClickRelease.Play();
             }
         }
 
@@ -289,48 +341,64 @@ namespace BoringIdleGame
         private void btnItem1_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem1, 1, ref intItem1Prc, 1.16, ref intItem1Lvl, lblItem1Prc, lblItem1Lvl);
+            ItemAchievement(prAchievement1, 10, 100, 100, 10000, 1000, 100000, intItem1Lvl, 1);
+
         }
 
         //Item 2 Button 
         private void btnItem2_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem2, 10, ref intItem2Prc, 1.27, ref intItem2Lvl, lblItem2Prc, lblItem2Lvl);
+            ItemAchievement(prAchievement2, 10, 1000, 100, 100000, 1000, 1000000, intItem2Lvl, 2);
+           
         }
 
         //Item 3 Button 
         private void btnItem3_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem3, 50, ref intItem3Prc, 1.30, ref intItem3Lvl, lblItem3Prc, lblItem3Lvl);
+            ItemAchievement(prAchievement3, 10, 10000, 100, 1000000, 1000, 10000000, intItem3Lvl, 3);
+
         }
 
         //Item 4 Button 
         private void btnItem4_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem4, 1000, ref intItem4Prc, 1.33, ref intItem4Lvl, lblItem4Prc, lblItem4Lvl);
+            ItemAchievement(prAchievement4, 10, 100000, 100, 10000000, 1000, 100000000, intItem4Lvl, 4);
+
         }
 
         //Item 5 Button 
         private void btnItem5_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem5, 5000, ref intItem5Prc, 1.35, ref intItem5Lvl, lblItem5Prc, lblItem5Lvl);
+            ItemAchievement(prAchievement5, 10, 1000000, 100, 100000000, 1000, 1000000000, intItem5Lvl, 5);
+          
         }
 
         //Item 6 Button 
         private void btnItem6_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem6, 50000, ref intItem6Prc, 1.37, ref intItem6Lvl, lblItem6Prc, lblItem6Lvl);
+            ItemAchievement(prAchievement6, 10, 10000000, 100, 1000000000, 1000, 10000000000, intItem6Lvl, 6);
+
         }
 
         //Item 7 Button 
         private void btnItem7_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem7, 100000, ref intItem7Prc, 1.39, ref intItem7Lvl, lblItem7Prc, lblItem7Lvl);
+            ItemAchievement(prAchievement7, 10, 100000000, 100, 10000000000, 1000, 100000000000, intItem7Lvl, 7);
+
         }
 
         //Item 8 Button 
         private void btnItem8_Click(object sender, EventArgs e)
         {
             Upgrade(ref intItem8, 1000000, ref intItem8Prc, 1.43, ref intItem8Lvl, lblItem8Prc, lblItem8Lvl);
+            ItemAchievement(prAchievement8, 10, 1000000000, 100, 100000000000, 1000, 1000000000000, intItem8Lvl, 8);
+  
         }
 
 
@@ -373,6 +441,33 @@ namespace BoringIdleGame
             Upgrade(ref intButton, 10000, ref intUpgrade1Prc, 1.19, ref intUpgrade5Lvl, lblUpgrade5Prc, lblUpgrade5Lvl);
         }
 
+        //Prestige button
+        private void btnPrestige_Click(object sender, EventArgs e)
+        {
+            Int64 PotentialScore = (Convert.ToInt64(decNumber) + intAutoClicks + intButton)/167366296 + intPrestigeMultiplier;
+
+            var confirmPrestige = MessageBox.Show("Doing this will restart the game but you will get a multiplier that will help increase the speed your number grows. Do you want to prestige for a potential multiplier of " + PotentialScore + "? (Includes current multiplier)",
+                         "Prestige",
+                         MessageBoxButtons.YesNo);
+            if (confirmPrestige == DialogResult.Yes && PotentialScore >= 2)
+            {
+                var confirmReset2 = MessageBox.Show("Are you ABSOLUTELY sure you want to prestige?",
+                         "Confirm Prestige",
+                         MessageBoxButtons.YesNo);
+                if (confirmReset2 == DialogResult.Yes)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    Reset();
+                    intPrestigeLvl += 1;
+                    intPrestigeMultiplier += PotentialScore;
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You cannot Prestige for a multiplier of 1!", "Prestige", MessageBoxButtons.OK);
+            }
+        }
 
 
         //Numbers per second
@@ -380,7 +475,7 @@ namespace BoringIdleGame
         {
             try
             {
-                decNumber += intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8;
+                decNumber += (intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8) * intPrestigeMultiplier;
             }
             catch 
             {
@@ -398,9 +493,7 @@ namespace BoringIdleGame
         //Label Updater
         private void timerLabelUpdater_Tick(object sender, EventArgs e)
         {
-            //Auto Clicks
-            intAutoClicks = intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8;
-            lblAutoClick.Text = "Auto Clicks: " + String.Format("{0:n0}",intAutoClicks);
+
 
             //Item 1
             btnItem1.Enabled = (decNumber >= intItem1Prc) ? true : false;
@@ -441,6 +534,9 @@ namespace BoringIdleGame
             //Upgrade 5
             btnUpgrade5.Enabled = (decNumber >= intUpgrade5Prc) ? true : false;
 
+            //Prestige
+            btnPrestige.Enabled = ((Convert.ToInt64(decNumber) + intAutoClicks + intButton) / 167366296 + intPrestigeMultiplier >= 1) ? true : false;
+
             //Prices and Levels
             lblItem1Lvl.Text = String.Format("{0:n0}", intItem1Lvl);
             lblItem2Lvl.Text = String.Format("{0:n0}", intItem2Lvl);
@@ -475,13 +571,15 @@ namespace BoringIdleGame
 
             lblUpgrade5Prc.Text = String.Format("{0:n0}", intUpgrade5Prc);
 
-            lblAutoClick.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
+            txtAutoClicks.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
 
             if (decNumber >= 79228000000000000000000000000m && blWin == false)
             {
                 MessageBox.Show("You win! Get a life!", "Winner!");
                 blWin = true;
                 Reset();
+                intPrestigeLvl = 0;
+                intPrestigeMultiplier = 0;
                 blWin = false;
 
 
@@ -532,13 +630,14 @@ namespace BoringIdleGame
         {
             dtPast = DateTime.Now;
 
-            TextWriter tw = new StreamWriter("SavedGame.txt");
+            TextWriter tw = new StreamWriter("BoringIdleGame.Properties.Resources.SavedGame");
 
             // write lines of text to the file
             tw.WriteLine("Changing this file will result in everything being deleted.");
             tw.WriteLine(intButton);
             tw.WriteLine(decNumber);
             tw.WriteLine(intAutoClicks);
+            tw.WriteLine(decClicks);
             tw.WriteLine(intItem1);
             tw.WriteLine(intItem1Lvl);
             tw.WriteLine(intItem1Prc);
@@ -577,12 +676,272 @@ namespace BoringIdleGame
             tw.WriteLine(dtPast);
             tw.WriteLine(intUpgrade5Lvl);
             tw.WriteLine(intUpgrade5Prc);
+            tw.WriteLine(intPrestigeLvl);
+            tw.WriteLine(intPrestigeMultiplier);
 
 
 
             // close the stream     
             tw.Close();
         }
+
+        //Achievements
+        private void timerAchievements_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        //Achievement AutoClicks Method
+        public void AutoAchievement(ProgressBar Achievement, int Goal1, int Reward1, int Goal2, Int64 Reward2, int Goal3, Int64 Reward3, Int64 Counter)
+        {
+            try
+            {
+                Achievement.Value = Convert.ToInt32(Counter);
+            }
+            catch
+            {
+                if (Achievement.Value == Goal1)
+                {
+                    Achievement.Maximum = Goal2;
+                }
+                if (Achievement.Value == Goal2)
+                {
+                    Achievement.Maximum = Goal3;
+                }
+                if (Achievement.Value == Goal3)
+                {
+                    Achievement.Value = Goal3;
+                }
+            }
+            bool R1 = false;
+            bool R2 = false;
+            bool R3 = false;
+
+            if (Counter > Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Goal3 + "/" + Goal3);
+            }
+
+            if (Counter == Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Goal3 + "/" + Goal3);
+                if (R3 == false)
+                {
+                    R3 = true;
+                    decNumber += Reward3;
+                }
+            }
+
+            if (Counter < Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Counter + "/" + Goal3);
+                Achievement.Maximum = Goal3;
+            }
+
+            if (Counter == Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Goal2 + "/" + Goal2);
+                if (R2 == false)
+                {
+                    R2 = true;
+                    decNumber += Reward2;
+                    Achievement.Maximum = Goal2;
+                }
+            }
+
+            if (Counter < Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Counter + "/" + Goal2);
+                Achievement.Maximum = Goal2;
+            }
+
+            if (Counter == Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Goal1 + "/" + Goal1);
+                if (R1 == false)
+                {
+                    R1 = true;
+                    decNumber += Reward1;
+                    Achievement.Maximum = Goal1;
+                }
+            }
+
+            if (Counter < Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Auto Clicks Achievement Progress: " + Counter + "/" + Goal1);
+                Achievement.Maximum = Goal1;
+            }
+
+
+        }
+
+        //Achievement Button Method
+        public void ButtonAchievement(ProgressBar Achievement, int Goal1, int Reward1, int Goal2, Int64 Reward2, int Goal3, Int64 Reward3, Int64 Counter)
+        {
+            try
+            {
+                Achievement.Value = Convert.ToInt32(Counter);
+            }
+            catch
+            {
+                if (Achievement.Value == Goal1)
+                {
+                    Achievement.Maximum = Goal2;
+                }
+                if (Achievement.Value == Goal2)
+                {
+                    Achievement.Maximum = Goal3;
+                }
+                if (Achievement.Value == Goal3)
+                {
+                    Achievement.Value = Goal3;
+                }
+            }
+            bool R1 = false;
+            bool R2 = false;
+            bool R3 = false;
+
+            if (Counter > Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Goal3 + "/" + Goal3);
+            }
+
+            if (Counter == Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Goal3 + "/" + Goal3);
+                if (R3 == false)
+                {
+                    R3 = true;
+                    decNumber += Reward3;
+                }
+            }
+
+            if (Counter < Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Counter + "/" + Goal3);
+                Achievement.Maximum = Goal3;
+            }
+
+            if (Counter == Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Goal2 + "/" + Goal2);
+                if (R2 == false)
+                {
+                    R2 = true;
+                    decNumber += Reward2;
+                    Achievement.Maximum = Goal2;
+                }
+            }
+
+            if (Counter < Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Counter + "/" + Goal2);
+                Achievement.Maximum = Goal2;
+            }
+
+            if (Counter == Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Goal1 + "/" + Goal1);
+                if (R1 == false)
+                {
+                    R1 = true;
+                    decNumber += Reward1;
+                    Achievement.Maximum = Goal1;
+                }
+            }
+
+            if (Counter < Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Button Clicks Achievement Progress: " + Counter + "/" + Goal1);
+                Achievement.Maximum = Goal1;
+            }
+
+
+        }
+
+        //Achievement item method
+        public void ItemAchievement(ProgressBar Achievement, int Goal1, int Reward1, int Goal2, Int64 Reward2, int Goal3, Int64 Reward3, Int64 Counter, int Item)
+        {
+            try
+            {
+                Achievement.Value = Convert.ToInt32(Counter);
+            }
+            catch
+            {
+                if (Achievement.Value == Goal1)
+                {
+                    Achievement.Maximum = Goal2;
+                }
+                if (Achievement.Value == Goal2)
+                {
+                    Achievement.Maximum = Goal3;
+                }
+                if (Achievement.Value == Goal3)
+                {
+                    Achievement.Value = Goal3;
+                }
+            }
+            bool R1 = false;
+            bool R2 = false;
+            bool R3 = false;
+            
+            if (Counter > Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Goal3 + "/" + Goal3);
+            }
+
+            if (Counter == Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Goal3 + "/" + Goal3);
+                if (R3 == false)
+                {
+                    R3 = true;
+                    decNumber += Reward3;
+                }
+            }
+
+            if (Counter < Goal3)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Counter + "/" + Goal3);
+                Achievement.Maximum = Goal3;
+            }
+
+            if (Counter == Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Goal2 + "/" + Goal2);
+                if (R2 == false)
+                {
+                    R2 = true;
+                    decNumber += Reward2;
+                    Achievement.Maximum = Goal2;
+                }
+            }
+
+            if (Counter < Goal2)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Counter + "/" + Goal2);
+                Achievement.Maximum = Goal2;
+            }
+
+            if (Counter == Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item " + Item + " Achievement Progress: " + Goal1 + "/" + Goal1);
+                if (R1 == false)
+                {
+                    R1 = true;
+                    decNumber += Reward1;
+                    Achievement.Maximum = Goal1;
+                }
+            }
+
+            if (Counter < Goal1)
+            {
+                toolTipAch.SetToolTip(Achievement, "Item "+ Item + " Achievement Progress: " + Counter + "/" + Goal1);
+                Achievement.Maximum = Goal1;
+            }
+        }
+
+
 
 
 
@@ -603,23 +962,31 @@ namespace BoringIdleGame
             catch { }
 
             Item += ItemAmount;
+
+            //Auto Clicks
+            intAutoClicks = (intItem1 + intItem2 + intItem3 + intItem4 + intItem5 + intItem6 + intItem7 + intItem8) * intPrestigeMultiplier;
+            txtAutoClicks.Text = "Auto Clicks: " + String.Format("{0:n0}", intAutoClicks);
+            AutoAchievement(prAchievement10, 100, 1000, 10000, 100000, 100000, 10000000, intAutoClicks);
+
         }
 
         //Reset
         private void button1_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to reset?",
+            var confirmReset = MessageBox.Show("Are you sure you want to reset?",
                                      "Confirm Reset",
                                      MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
+            if (confirmReset == DialogResult.Yes)
             {
-                var confirmResult2 = MessageBox.Show("Are you ABSOLUTELY sure you want to reset?",
+                var confirmReset2 = MessageBox.Show("Are you ABSOLUTELY sure you want to reset?",
                          "Confirm Reset",
                          MessageBoxButtons.YesNo);
-                if (confirmResult2 == DialogResult.Yes)
+                if (confirmReset2 == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     Reset();
+                    intPrestigeLvl = 0;
+                    intPrestigeMultiplier = 1;
                     Cursor.Current = Cursors.Default;
                 }
             }
@@ -627,10 +994,12 @@ namespace BoringIdleGame
 
         public void Reset()
         {
+
             //button
             intButton = 1;
             decNumber = 0;
             intAutoClicks = 0;
+            decClicks = 0;
 
 
             //items
@@ -700,7 +1069,24 @@ namespace BoringIdleGame
             // upgrade 5 is intButton
             intUpgrade5Lvl = 0;
             intUpgrade5Prc = 10000000;
+
+            //Achievements
+            ItemAchievement(prAchievement1, 10, 100, 100, 10000, 1000, 100000, intItem1Lvl, 1);
+            ItemAchievement(prAchievement2, 10, 1000, 100, 100000, 1000, 1000000, intItem2Lvl, 2);
+            ItemAchievement(prAchievement3, 10, 10000, 100, 1000000, 1000, 10000000, intItem3Lvl, 3);
+            ItemAchievement(prAchievement4, 10, 100000, 100, 10000000, 1000, 100000000, intItem4Lvl, 4);
+            ItemAchievement(prAchievement5, 10, 1000000, 100, 100000000, 1000, 1000000000, intItem5Lvl, 5);
+            ItemAchievement(prAchievement6, 10, 10000000, 100, 1000000000, 1000, 10000000000, intItem6Lvl, 6);
+            ItemAchievement(prAchievement7, 10, 100000000, 100, 10000000000, 1000, 100000000000, intItem7Lvl, 7);
+            ItemAchievement(prAchievement8, 10, 1000000000, 100, 100000000000, 1000, 1000000000000, intItem8Lvl, 8);
+            ButtonAchievement(prAchievement9, 100, 100, 10000, 10000, 1000000, 10000000, Convert.ToInt64(decClicks));
+            AutoAchievement(prAchievement10, 100, 1000, 10000, 100000, 100000, 10000000, intAutoClicks);
         }
 
+        //No selecting text box
+        private void txtAutoClicks_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = btnButton;
+        }
     }
 }
